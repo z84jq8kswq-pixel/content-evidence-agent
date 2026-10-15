@@ -6,3 +6,7 @@ runs/
 app/reviews.jsonl
 # 写入过程中的临时文件
 *.tmp
+# 第三方网页另存内容：只在本机使用，不进公开仓库（版权与条款）
+data/imports/*.html
+data/imports/*.htm
+data/imports/*.txt
