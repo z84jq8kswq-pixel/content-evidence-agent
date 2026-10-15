@@ -644,6 +644,55 @@ class ReferenceApiTests(unittest.TestCase):
         self.assertEqual(status, 400)
         self.assertEqual(body["error"]["kind"], "invalid_request")
 
+    def test_capture_references_end_to_end(self) -> None:
+        """整条路径：跑一次研判 → 取材料 → 落盘 → 读回。
+
+        这条测试是补上一个真实漏测的缺陷：`capture_references` 里合并读回那一步
+        用了没导入的函数名，只有走完整路径才会暴露（接口级测试当时用的是假 fetcher，
+        没覆盖到函数内部）。
+        """
+
+        run_id = "content-unit-capture"
+        workbench.run_content(
+            self.root, "云石 P20 容量 20000mAh。", corpus=LocalCorpus.from_dir(self.root / "data" / "corpus"), run_id=run_id
+        )
+        opener = FakeOpener({"https://ok.example/x": html_response("https://ok.example/x", "参考材料正文")})
+        payload = workbench.capture_references(
+            self.root,
+            run_id,
+            urls=["https://ok.example/x"],
+            fetcher=fetcher_with(opener),
+            config={"enabled": True},
+        )
+        self.assertEqual(payload["counts"], {"total": 1, "ok": 1, "failed": 0})
+        self.assertTrue(payload["reference_only"])
+        self.assertEqual(payload["disclaimer"], REFERENCE_DISCLAIMER)
+        self.assertTrue(payload["items"][0]["reference_only"])
+
+        # 落盘与读回一致
+        saved = json.loads(
+            (self.root / "runs" / run_id / "web_references.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(saved["counts"], payload["counts"])
+        again = workbench.list_references(self.root, run_id)
+        self.assertEqual(again["items"][0]["url"], "https://ok.example/x")
+        # 结果文件里仍然没有材料字段
+        results = json.loads(
+            (self.root / "runs" / run_id / "results.json").read_text(encoding="utf-8")
+        )
+        self.assertNotIn("web_references", results)
+
+    def test_capture_references_requires_a_target(self) -> None:
+        run_id = "content-unit-empty-req"
+        workbench.run_content(
+            self.root,
+            "云石 P20 容量 20000mAh。",
+            corpus=LocalCorpus.from_dir(self.root / "data" / "corpus"),
+            run_id=run_id,
+        )
+        with self.assertRaises(workbench.ContentValidationError):
+            workbench.capture_references(self.root, run_id, urls=[], query="")
+
     def test_reference_index_accumulates_and_never_loses_entries(self) -> None:
         """索引文件累加，快照文件只增不改：界面显示的条数与落盘必须一致。"""
 

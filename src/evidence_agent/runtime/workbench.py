@@ -832,7 +832,12 @@ def capture_references(
     刻意**只做取回与存档**：不写进 `results.json`，不触碰任何主张的判定。
     """
 
-    from ..tools import ShadowRetrieval, ShadowRetrievalError, write_reference_payload
+    from ..tools import (
+        ShadowRetrieval,
+        ShadowRetrievalError,
+        load_reference_payload,
+        write_reference_payload,
+    )
 
     clean_urls = [str(url or "").strip() for url in urls if str(url or "").strip()]
     if not clean_urls and not (query or "").strip():
