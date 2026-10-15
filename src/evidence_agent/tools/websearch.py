@@ -26,11 +26,13 @@ from __future__ import annotations
 
 import hashlib
 import html
+import io
 import ipaddress
 import json
 import os
 import re
 import socket
+import subprocess
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -358,6 +360,91 @@ class WebFetchResult:
         return payload
 
 
+def find_curl() -> str | None:
+    """找一个可用的 curl 可执行文件。
+
+    为什么需要它：部分国内官方站点（民航局、市场监管总局、药监局等）的 TLS 配置
+    与 Python 标准库的协商方式不兼容——TCP 通、浏览器与 curl 都能打开，标准库握手
+    却被对端切断（`SSL: UNEXPECTED_EOF_WHILE_READING`）。这不是反爬，是协议栈差异。
+    采集真实材料时用系统 curl（Windows 走 Schannel）作为**回退**，而不是放弃这些站点。
+    """
+
+    import shutil as _shutil
+
+    for name in ("curl", "curl.exe"):
+        found = _shutil.which(name)
+        if found:
+            try:
+                proc = subprocess.run(
+                    [found, "--version"], capture_output=True, timeout=5, check=False
+                )
+                if proc.returncode == 0:
+                    return found
+            except (OSError, subprocess.SubprocessError):
+                continue
+    return None
+
+
+def fetch_text_via_curl(
+    curl: str,
+    url: str,
+    *,
+    user_agent: str,
+    timeout_s: float = 8.0,
+    max_bytes: int = 200_000,
+) -> tuple[str, str]:
+    """用系统 curl 取一小段文本，返回 (是否成功, 内容或错误)。
+
+    与 `WebFetcher._fetch_via_curl` 同样的理由：部分国内站点的 TLS 只认某些协商方式，
+    标准库握手会被切断，而系统 curl 能正常取回。工具本身不绕过任何访问控制。
+    """
+
+    import subprocess
+    import tempfile
+
+    with tempfile.TemporaryDirectory(prefix="cea-curl-text-") as tmp:
+        body_path = Path(tmp) / "body"
+        meta_path = Path(tmp) / "meta"
+        command = [
+            curl,
+            "--silent",
+            "--show-error",
+            "--location",
+            "--max-redirs",
+            "3",
+            "--max-time",
+            str(int(timeout_s)),
+            "--max-filesize",
+            str(max_bytes),
+            "--user-agent",
+            user_agent,
+            "--output",
+            str(body_path),
+            "--write-out",
+            "%{http_code}",
+            url,
+        ]
+        try:
+            with meta_path.open("wb") as meta_handle:
+                proc = subprocess.run(
+                    command,
+                    stdout=meta_handle,
+                    stderr=subprocess.DEVNULL,
+                    timeout=timeout_s + 5,
+                    check=False,
+                )
+        except (OSError, subprocess.SubprocessError) as exc:
+            return False, f"curl 不可用：{type(exc).__name__}"
+        if proc.returncode != 0:
+            return False, f"curl 退出码 {proc.returncode}"
+        code = meta_path.read_text(encoding="utf-8", errors="replace").strip()
+        if code and code.isdigit() and int(code) >= 400:
+            return False, f"HTTP {code}"
+        if not body_path.exists():
+            return False, "curl 没有写出内容"
+        return True, body_path.read_text(encoding="utf-8", errors="replace")
+
+
 class WebFetcher:
     """获取公开网页：校验目标、跟随重定向、限流限量、抽取正文。
 
@@ -375,6 +462,7 @@ class WebFetcher:
         resolver: Callable[[str], Sequence[str]] = default_resolver,
         allow_hosts: Sequence[str] = (),
         deny_hosts: Sequence[str] = (),
+        curl_fallback: bool = True,
     ) -> None:
         self.user_agent = user_agent
         self.timeout_s = float(timeout_s)
@@ -384,10 +472,19 @@ class WebFetcher:
         self.resolver = resolver
         self.allow_hosts = tuple(allow_hosts)
         self.deny_hosts = tuple(deny_hosts)
+        #: 标准库 TLS 握手失败时是否回退到系统 curl（见 find_curl 的说明）
+        self.curl_fallback = bool(curl_fallback)
+        self._curl = find_curl() if self.curl_fallback else None
 
     # --- 内部：一次请求 -------------------------------------------------
 
     def _open(self, url: str):
+        """返回一个可用作上下文管理器的响应对象。
+
+        顺序：标准库默认协商 → 限定 TLS 1.2 再试 → 交给系统 curl。
+        三步都在同一条路径上，任何一步成功就直接返回，不再往下走。
+        """
+
         request = urllib.request.Request(
             url,
             headers={
@@ -397,7 +494,176 @@ class WebFetcher:
             },
             method="GET",
         )
-        return urllib.request.urlopen(request, timeout=self.timeout_s)
+        try:
+            return urllib.request.urlopen(request, timeout=self.timeout_s)
+        except urllib.error.URLError as exc:
+            if not self._is_tls_handshake_error(exc):
+                raise
+            first_error = exc
+
+        # 第二步：显式限定 TLS 1.2
+        try:
+            return self._open_with_tls12(request)
+        except Exception as tls12_error:  # noqa: BLE001 - 记录原因后继续回退
+            self._last_tls_error = tls12_error
+
+        # 第三步：系统 curl（Windows 走 Schannel，能协商这些站点）
+        if self._curl:
+            adapted = self._curl_adapted_response(url)
+            if adapted is not None:
+                return adapted
+
+        raise first_error
+
+    @staticmethod
+    def _is_tls_handshake_error(exc: BaseException) -> bool:
+        reason = getattr(exc, "reason", exc)
+        text = f"{type(reason).__name__}: {reason}"
+        return "SSL" in text or "UNEXPECTED_EOF" in text
+
+    def _open_with_tls12(self, request: urllib.request.Request):
+        import ssl as _ssl
+
+        context = _ssl.create_default_context()
+        context.minimum_version = _ssl.TLSVersion.TLSv1_2
+        context.maximum_version = _ssl.TLSVersion.TLSv1_2
+        return urllib.request.urlopen(request, timeout=self.timeout_s, context=context)
+
+    def _curl_adapted_response(self, url: str):
+        """用 curl 取回并把结果包成"像 urlopen 返回值"的对象。
+
+        即使 curl 取到了**没有正文**的页面（`NO_TEXT`）也要返回这个包装：那是一个
+        真实结论（页面是脚本渲染的空壳），不能被降级成"TLS 失败"。只有真正没取到
+        （网络/TLS/HTTP 错误）才返回 None。
+        """
+
+        result = WebFetchResult(url=url)
+        fetched = self._fetch_via_curl(result)
+        if fetched.status not in (STATUS_OK, STATUS_NO_TEXT, STATUS_UNSUPPORTED_TYPE):
+            return None
+
+        class _CurlResponse:
+            def __init__(self, item: WebFetchResult) -> None:
+                self._stream = io.BytesIO(bytes(item.raw_bytes))
+                self.url = item.final_url or item.url
+                self.status = item.http_status or 200
+                self.headers = {"Content-Type": item.content_type or "text/html"}
+                #: 标记这已经是 curl 的完整结论，调用方不要再走一遍正文抽取
+                self.final_result = item
+
+            def read(self, size: int = -1) -> bytes:
+                return self._stream.read(size)
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *exc) -> bool:
+                return False
+
+        return _CurlResponse(fetched)
+
+    def _fetch_via_curl(self, result: WebFetchResult) -> WebFetchResult:
+        """用系统 curl 取一次，结果写回同一个对象。
+
+        与标准库路径共用同样的后处理（截断、编码猜测、正文抽取、哈希），
+        差别只在传输层；不带着 Cookie、不绕过任何访问控制、仍受同一套目标校验约束。
+
+        实现细节：**用文件重定向，不用管道**。受限环境下管道（`capture_output`）
+        会被沙箱策略拒绝，而重定向到临时文件没有这个限制，行为也更可预期。
+        """
+
+        if not self._curl:
+            return result
+        import tempfile
+
+        with tempfile.TemporaryDirectory(prefix="cea-curl-") as tmp:
+            body_path = Path(tmp) / "body"
+            meta_path = Path(tmp) / "meta"
+            command = [
+                self._curl,
+                "--silent",
+                "--show-error",
+                "--location",
+                # 注意：--max-redirs 只接受空格分隔（写成 --max-redirs=3 会被 curl 视为未知参数）
+                "--max-redirs",
+                str(self.max_redirects),
+                "--max-time",
+                str(int(self.timeout_s)),
+                "--max-filesize",
+                str(self.max_bytes),
+                "--user-agent",
+                self.user_agent,
+                "--output",
+                str(body_path),
+                "--write-out",
+                "%{http_code}\n%{content_type}\n%{url_effective}",
+                result.url,
+            ]
+            try:
+                with meta_path.open("wb") as meta_handle:
+                    proc = subprocess.run(
+                        command,
+                        stdout=meta_handle,
+                        stderr=subprocess.DEVNULL,
+                        timeout=self.timeout_s + 5,
+                        check=False,
+                    )
+            except (OSError, subprocess.SubprocessError) as exc:
+                result.status = STATUS_UPSTREAM_ERROR
+                result.error = f"curl 回退失败：{type(exc).__name__}"
+                return result
+
+            if proc.returncode != 0:
+                result.status = STATUS_UPSTREAM_ERROR
+                result.error = f"curl 回退失败（退出码 {proc.returncode}）"
+                return result
+            if not body_path.exists() or not meta_path.exists():
+                result.status = STATUS_UPSTREAM_ERROR
+                result.error = "curl 回退没有写出响应"
+                return result
+
+            raw_bytes = body_path.read_bytes()
+            meta_lines = meta_path.read_text(encoding="utf-8", errors="replace").splitlines()
+
+        http_code = meta_lines[0].strip() if meta_lines else ""
+        result.content_type = meta_lines[1].strip() if len(meta_lines) > 1 else ""
+        result.final_url = (meta_lines[2].strip() if len(meta_lines) > 2 else "") or result.url
+        result.http_status = int(http_code) if http_code.isdigit() else 0
+
+        if len(raw_bytes) > self.max_bytes:
+            result.truncated = True
+            raw_bytes = raw_bytes[: self.max_bytes]
+        result.raw_bytes = raw_bytes
+
+        if result.http_status and result.http_status >= 400:
+            result.status = STATUS_HTTP_ERROR
+            result.error = f"HTTP {result.http_status}"
+            return result
+
+        lowered = result.content_type.lower()
+        if lowered and not any(token in lowered for token in TEXT_CONTENT_TYPES):
+            result.status = STATUS_UNSUPPORTED_TYPE
+            result.raw_sha256 = sha256_hex(raw_bytes)
+            result.error = f"不支持的内容类型：{result.content_type}"
+            return result
+
+        text_body, charset = decode_body(raw_bytes, result.content_type)
+        result.charset = charset
+        text, title = extract_text(text_body)
+        result.title = title
+        if len(text) > self.max_text_chars:
+            result.truncated = True
+            text = text[: self.max_text_chars]
+        result.text = text
+        result.raw_sha256 = sha256_hex(raw_bytes)
+        result.text_sha256 = sha256_hex(text.encode("utf-8"))
+        if not text.strip():
+            result.status = STATUS_NO_TEXT
+            result.error = "页面没有可用正文（可能是脚本渲染或纯结构化页面）"
+            return result
+        result.status = STATUS_OK
+        result.error = ""
+        return result
 
     def fetch(self, url: str) -> WebFetchResult:
         """获取一个 URL。任何失败都以**明确状态**返回，不抛异常、不伪装成空结果。"""
@@ -429,6 +695,13 @@ class WebFetcher:
                     result.http_status = int(getattr(response, "status", 200) or 200)
                     result.final_url = str(getattr(response, "url", current) or current)
                     result.content_type = str(response.headers.get("Content-Type", "") or "")
+                    # curl 路径已经做完整个结论（含"没有正文"这种真实状态），
+                    # 直接采信，不要再拿字节走一遍抽取。
+                    settled = getattr(response, "final_result", None)
+                    if settled is not None:
+                        settled.url = result.url
+                        settled.redirects = seen
+                        return settled
                     raw = response.read(self.max_bytes + 1)
             except urllib.error.HTTPError as exc:
                 location = (exc.headers or {}).get("Location") if exc.headers else None
@@ -453,6 +726,17 @@ class WebFetcher:
                 if isinstance(reason, socket.timeout) or "timed out" in str(reason).lower():
                     result.status = STATUS_TIMEOUT
                     result.error = f"请求超时（{self.timeout_s}s）"
+                elif self._is_tls_handshake_error(exc):
+                    # 标准库协商不了就换系统 curl 的 TLS 栈（见 find_curl 的说明）。
+                    # 这不是绕过限制：同样的 UA、不带着 Cookie、仍受同一套目标校验约束。
+                    if self._curl:
+                        recovered = self._fetch_via_curl(result)
+                        if recovered.ok:
+                            return recovered
+                    result.status = STATUS_UPSTREAM_ERROR
+                    result.error = (
+                        f"TLS 握手失败（系统 curl 回退也不可用）：{reason}"
+                    )
                 else:
                     result.status = STATUS_UPSTREAM_ERROR
                     result.error = f"网络不可用：{type(reason).__name__}: {reason}"

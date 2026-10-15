@@ -731,6 +731,148 @@ class ReferenceApiTests(unittest.TestCase):
         self.assertTrue(any(item["status"] == "UNSAFE_URL" for item in merged["items"]))
 
 
+class CurlFallbackTests(unittest.TestCase):
+    """curl 回退：部分官方站点用标准库协商不了 TLS，换系统 curl 才能取。
+
+    全部用**假 curl 脚本**驱动，不依赖网络，也不依赖本机真的装了 curl。
+    """
+
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.page = self.root / "page.html"
+        self.page.write_text(
+            "<html><head><title>假站点</title></head><body><p>正文来自假 curl</p></body></html>",
+            encoding="utf-8",
+        )
+
+    def tearDown(self) -> None:
+        self.tmp.cleanup()
+
+    def _patch_subprocess(self, http_code: str = "200", content_type: str = "text/html"):
+        """把 subprocess.run 换成一个"假 curl"：按 --output 写出正文、按 --write-out 写出元信息。
+
+        返回 captured 字典，用来断言命令行参数是否拼对。
+        """
+
+        import types
+
+        from evidence_agent.tools import websearch as ws
+
+        captured: dict = {}
+        original = ws.subprocess.run
+
+        def fake_run(command, stdout=None, stderr=None, timeout=None, check=False, capture_output=False):
+            # `find_curl()` 会先用 `--version` 探一次，那个调用没有 --output
+            if "--output" not in command:
+                return types.SimpleNamespace(returncode=0, stdout=b"curl 8.13.0", stderr=b"")
+            captured["command"] = list(command)
+            body_path = Path(command[command.index("--output") + 1])
+            body_path.write_bytes(
+                "<html><head><title>假站点</title></head><body><p>正文来自假 curl</p></body></html>".encode(
+                    "utf-8"
+                )
+            )
+            if stdout is not None:
+                stdout.write(
+                    f"{http_code}\n{content_type}\nhttps://fake.example/final\n".encode("utf-8")
+                )
+                stdout.flush()
+            return types.SimpleNamespace(returncode=0, stdout=b"", stderr=b"")
+
+        ws.subprocess.run = fake_run
+        self.addCleanup(setattr, ws.subprocess, "run", original)
+        return captured
+
+    def _fake_fetcher(self, http_code: str = "200", content_type: str = "text/html"):
+        """构造一个用假 curl 的获取器。"""
+
+        captured = self._patch_subprocess(http_code, content_type)
+        fetcher = WebFetcher(resolver=public_resolver, curl_fallback=True)
+        fetcher._curl = str(self.page)  # 只用于"curl 可用"判断
+        return fetcher, captured
+
+    def test_curl_flags_use_space_separated_max_redirs(self) -> None:
+        """`--max-redirs=3` 会被 curl 判为未知参数（实测退出码 2），必须空格分隔。"""
+
+        fetcher, captured = self._fake_fetcher()
+        fetcher._fetch_via_curl(websearch.WebFetchResult(url="https://fake.example/"))
+        command = captured["command"]
+        self.assertIn("--max-redirs", command)
+        self.assertNotIn("--max-redirs=3", command)
+        index = command.index("--max-redirs")
+        self.assertEqual(command[index + 1], str(fetcher.max_redirects))
+
+    def test_curl_result_is_parsed_into_the_result_object(self) -> None:
+        fetcher, _ = self._fake_fetcher()
+        result = fetcher._fetch_via_curl(websearch.WebFetchResult(url="https://fake.example/"))
+        self.assertEqual(result.status, websearch.STATUS_OK)
+        self.assertEqual(result.http_status, 200)
+        self.assertIn("正文来自假 curl", result.text)
+        self.assertEqual(result.final_url, "https://fake.example/final")
+        self.assertTrue(result.raw_sha256)
+
+    def test_page_without_text_is_reported_as_no_text_not_failure(self) -> None:
+        """取到了但没有正文（JS 空壳）是**真实结论**，不能被降级成 TLS 失败。"""
+
+        fetcher, _ = self._fake_fetcher()
+        original = websearch.subprocess.run
+
+        import types
+
+        def fake_run(command, stdout=None, stderr=None, timeout=None, check=False, capture_output=False):
+            if "--output" not in command:
+                return types.SimpleNamespace(returncode=0, stdout=b"curl 8.13.0", stderr=b"")
+            body_path = Path(command[command.index("--output") + 1])
+            body_path.write_bytes(b"<html><head><script>var a=1;</script></head><body></body></html>")
+            if stdout is not None:
+                stdout.write(b"200\ntext/html\nhttps://fake.example/empty\n")
+                stdout.flush()
+            return types.SimpleNamespace(returncode=0, stdout=b"", stderr=b"")
+
+        websearch.subprocess.run = fake_run
+        try:
+            result = fetcher._fetch_via_curl(
+                websearch.WebFetchResult(url="https://fake.example/empty")
+            )
+        finally:
+            websearch.subprocess.run = original
+        self.assertEqual(result.status, websearch.STATUS_NO_TEXT)
+        self.assertEqual(result.http_status, 200)
+
+    def test_curl_failure_is_reported_with_exit_code(self) -> None:
+        import types
+
+        from evidence_agent.tools import websearch as ws
+
+        fetcher = WebFetcher(resolver=public_resolver)
+        fetcher._curl = str(self.page)
+        original = ws.subprocess.run
+        ws.subprocess.run = lambda *a, **k: types.SimpleNamespace(
+            returncode=2, stdout=b"", stderr=b"curl: option error"
+        )
+        try:
+            result = fetcher._fetch_via_curl(websearch.WebFetchResult(url="https://fake.example/"))
+        finally:
+            ws.subprocess.run = original
+        self.assertNotEqual(result.status, websearch.STATUS_OK)
+        self.assertIn("退出码 2", result.error)
+
+    def test_missing_curl_is_reported_not_silently_ignored(self) -> None:
+        fetcher = WebFetcher(resolver=public_resolver)
+        fetcher._curl = None
+        result = fetcher._fetch_via_curl(websearch.WebFetchResult(url="https://fake.example/"))
+        self.assertNotEqual(result.status, websearch.STATUS_OK)
+
+    def test_tls_handshake_errors_are_recognised(self) -> None:
+        ssl_error = urllib.error.URLError(
+            __import__("ssl").SSLError(1, "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred")
+        )
+        self.assertTrue(WebFetcher._is_tls_handshake_error(ssl_error))
+        self.assertFalse(WebFetcher._is_tls_handshake_error(urllib.error.URLError("dns down")))
+        self.assertFalse(WebFetcher._is_tls_handshake_error(socket.timeout("t")))
+
+
 def _claims(content: str, max_claims: int = 5) -> list[str]:
     """测试用的固定主张切分，避免规则抽取器的改动影响隔离测试。"""
 
