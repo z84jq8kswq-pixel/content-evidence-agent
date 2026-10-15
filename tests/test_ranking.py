@@ -319,6 +319,25 @@ class CorpusConsistencyTests(unittest.TestCase):
 
         self.corpus = LocalCorpus.from_dir(ROOT / "data" / "corpus")
 
+    def test_real_product_entity_is_queryable(self) -> None:
+        """接真实语料后，真实型号必须能被别名解析与事实查询命中。
+
+        这条盯的是"语料里加了真实型号、但检索路径认不出来"这类静默失效：
+        认不出实体 → 事实查询空跑 → 主张只能转人工，而指标上看不出异常。
+        """
+
+        entity = "小米移动电源3 20000mAh 高配版"
+        self.assertIn(entity, self.corpus.aliases, "真实型号必须进别名表")
+        for alias in ("小米移动电源3", "PLM18ZM", "小米充电宝 20000mAh"):
+            self.assertIn(entity, self.corpus.resolve_entity(alias), alias)
+        rows = self.corpus.lookup_fact(entity)
+        self.assertTrue(rows, "真实型号必须有可查的结构化事实")
+        metrics = {str(row.get("metric")) for row in rows}
+        self.assertIn("额定能量", metrics)
+        # 每条事实都要能追回一份资料（出处可核）
+        for row in rows:
+            self.assertIn(str(row.get("source_id")), self.corpus.docs)
+
     def test_every_corpus_row_has_a_rank_key_and_three_bucket_weight(self) -> None:
         for row in self.corpus.enriched_facts():
             key = rank_key_for_row(row)

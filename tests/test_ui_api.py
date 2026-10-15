@@ -306,8 +306,15 @@ class ToolRegistryViewTests(unittest.TestCase):
         self.assertTrue(search["read_only"])
         self.assertEqual([p["name"] for p in search["params"]], ["query", "top_k"])
         self.assertTrue(search["params"][0]["required"])
-        self.assertEqual(view["corpus"]["sources"], 24)
-        self.assertEqual(view["corpus"]["version"], "c3")
+        # 语料规模随扩样变化，这里只断言"与真实语料一致且不为空"，
+        # 不写死数字——写死会在每次扩充语料时变成假失败（已经发生过一次）。
+        from evidence_agent.tools import LocalCorpus
+
+        corpus = LocalCorpus.from_dir(ROOT / "data" / "corpus")
+        self.assertEqual(view["corpus"]["sources"], len(corpus.docs))
+        self.assertGreaterEqual(view["corpus"]["sources"], 24)
+        self.assertEqual(view["corpus"]["version"], corpus.version)
+        self.assertTrue(view["corpus"]["version"])
 
 
 if __name__ == "__main__":

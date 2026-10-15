@@ -1,0 +1,1226 @@
+{
+  "imported_at": "2026-10-15T08:23:11+00:00",
+  "directory": "D:\\JOB\\项目\\content-evidence-agent\\data\\imports",
+  "existing_entities": {
+    "青禾 X1": [
+      "青禾X1",
+      "X1",
+      "青禾 X1 电动牙刷",
+      "青禾牙刷"
+    ],
+    "云石 P20": [
+      "云石P20",
+      "P20",
+      "云石 P20 充电宝",
+      "云石移动电源"
+    ],
+    "澜声 A2": [
+      "澜声A2",
+      "A2",
+      "澜声 A2 耳机",
+      "澜声耳机"
+    ],
+    "沁澜 R3": [
+      "沁澜R3",
+      "R3",
+      "沁澜 R3 净水器",
+      "沁澜净水器"
+    ],
+    "澄野 C5": [
+      "澄野C5",
+      "C5",
+      "澄野 C5 精华",
+      "澄野精华"
+    ],
+    "禾初米粉": [
+      "禾初 有机米粉",
+      "禾初有机米粉",
+      "禾初",
+      "禾初 米粉"
+    ],
+    "沐野 M1": [
+      "沐野M1",
+      "M1",
+      "沐野 M1 加湿器",
+      "沐野加湿器"
+    ]
+  },
+  "pages": [
+    {
+      "category": "充电宝",
+      "meta": {
+        "file": "01-充电宝.html",
+        "title": "云石 P20 移动电源 20000mAh 规格参数 - 示例商城",
+        "url": "https://example-mall.test/item/p20",
+        "publisher": "示例商城",
+        "date": "",
+        "sha256": "cdb77dca889d6a464241eb969a5b1e3deb9f3e6059d27f2e5869180af7b4ddbc",
+        "charset": "utf-8"
+      },
+      "chars": 166,
+      "values": [
+        {
+          "value": "20000",
+          "unit": "mAh",
+          "text": "20000mAh",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "云石 P20 移动电源 20000mAh 规格参数 - 示例商城"
+        },
+        {
+          "value": "20000",
+          "unit": "mAh",
+          "text": "20000mAh",
+          "metric": "容量",
+          "metric_certainty": "label",
+          "context": "电池容量:20000mAh"
+        },
+        {
+          "value": "74",
+          "unit": "Wh",
+          "text": "74Wh",
+          "metric": "额定能量",
+          "metric_certainty": "label",
+          "context": "石 P20 移动电源 电池容量:20000mAh 额定能量:74Wh 输入功率:18W,输出功率:22.5W 净重:434g,尺"
+        },
+        {
+          "value": "18",
+          "unit": "W",
+          "text": "18W",
+          "metric": "快充功率",
+          "metric_certainty": "label",
+          "context": "输入功率:18W,输出功率:22.5W"
+        },
+        {
+          "value": "22.5",
+          "unit": "W",
+          "text": "22.5W",
+          "metric": "快充功率",
+          "metric_certainty": "label",
+          "context": "输入功率:18W,输出功率:22.5W"
+        },
+        {
+          "value": "434",
+          "unit": "g",
+          "text": "434g",
+          "metric": "重量",
+          "metric_certainty": "label",
+          "context": "净重:434g,尺寸:150.6 x 72.2 x 26.9 mm"
+        },
+        {
+          "value": "26.9",
+          "unit": "mm",
+          "text": "26.9mm",
+          "metric": "重量",
+          "metric_certainty": "context",
+          "context": "净重:434g,尺寸:150.6 x 72.2 x 26.9 mm"
+        },
+        {
+          "value": "IPX4",
+          "unit": "",
+          "text": "IPX4",
+          "metric": "防水等级",
+          "metric_certainty": "label",
+          "context": "寸:150.6 x 72.2 x 26.9 mm 防水等级:IPX4 本产品通过 CCC 认证,编号 2020010901234"
+        }
+      ],
+      "text_excerpt": "云石 P20 移动电源 20000mAh 规格参数 - 示例商城\n云石 P20 移动电源\n电池容量：20000mAh\n额定能量：74Wh\n输入功率：18W，输出功率：22.5W\n净重：434g，尺寸：150.6 x 72.2 x 26.9 mm\n防水等级：IPX4\n本产品通过 CCC 认证，编号 2020010901234567。"
+    },
+    {
+      "category": "电动牙刷",
+      "meta": {
+        "file": "Sonicare HealthyWhite 充电式声波震动牙刷 HX6730_02 _ 飞利浦.html",
+        "title": "Sonicare HealthyWhite 充电式声波震动牙刷 HX6730/02 | 飞利浦",
+        "url": "https://www.philips.com.cn/c-p/HX6730_02/healthywhite-sonic-electric-toothbrush",
+        "publisher": "www.philips.com.cn",
+        "date": "",
+        "sha256": "ea52da96afba6d94e2f2b11b5d98c8984e8961c34a7df01a0d62a35eacc43947",
+        "charset": "UTF-8"
+      },
+      "chars": 2760,
+      "values": [
+        {
+          "value": "90",
+          "unit": "%",
+          "text": "90%",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "去除高达 90% 的牙齿色斑*"
+        }
+      ],
+      "text_excerpt": "Sonicare HealthyWhite 充电式声波震动牙刷 HX6730/02 | 飞利浦\n产品 支持\n产品\n个人护理\n男士专用\n电动剃须刀\n男士理容配件与附件\n女士专用\n肌肤护理\n美发护发\n口腔护理\n电动牙刷\n牙刷头\n喷气式洁牙器\n视听产品\n电视、显示器和视频\n电视\n显示器\n投影仪\n媒体播放机\n音频\n家庭音响\n平板家庭影院\n耳机\n无线扬声器\n派对音箱\n录音笔\n车载音响\n通信\n手机和平板电脑\n固定电话\n传真机\n附件\n线缆与连接\n电源解决方案\n手机配件\n电脑配件\n母婴护理\n母乳喂养\n会员一站式智护服务\n温奶器和消毒锅\n奶瓶奶嘴\n婴儿奶瓶和替换奶嘴\n安抚奶嘴\n入门套装及婴儿礼盒套装\n其他\n食品制造商和餐具\n肌肤护理\n出行用品\n婴儿车\n汽车座椅\n厨房及家居\n饮品\n咖啡\n水处理\n饮水解决方案\n热水解决方案\n浴室设施\n厨房电器\n空气炸锅\n电饭煲\n破壁机\n食品料理家电\n烹饪\n烹饪配件\n电水壶\n榨汁"
+    },
+    {
+      "category": "降噪耳机",
+      "meta": {
+        "file": "W820NB.html",
+        "title": "W820NB",
+        "url": "https://www.edifier.com/cn/product/product-specs-432.html",
+        "publisher": "www.edifier.com",
+        "date": "",
+        "sha256": "324b19a6153dd68b66b69e7507d319e416d15b0d2c04d61a1771af75f4d2bd49",
+        "charset": "UTF-8"
+      },
+      "chars": 9098,
+      "values": [
+        {
+          "value": "710",
+          "unit": "G",
+          "text": "710G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "K710G 头戴式调频耳机"
+        },
+        {
+          "value": "651",
+          "unit": "A",
+          "text": "651A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "VF651A 扬声器套装"
+        },
+        {
+          "value": "5.0",
+          "unit": "V",
+          "text": "5.0V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "额定输入 DC5.0V⎓1A"
+        },
+        {
+          "value": "1",
+          "unit": "A",
+          "text": "1A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "额定输入 DC5.0V⎓1A"
+        },
+        {
+          "value": "10",
+          "unit": "m",
+          "text": "10m",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "蓝牙协议 A2DP、AVRCP、HFP 蓝牙有效距离 10m"
+        },
+        {
+          "value": "20",
+          "unit": "Hz",
+          "text": "20Hz",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "频响范围 20Hz-40KHz"
+        },
+        {
+          "value": "12",
+          "unit": "小时",
+          "text": "12小时",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "全国客户服务热线 7x12 小时"
+        },
+        {
+          "value": "12",
+          "unit": "小时",
+          "text": "12小时",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "电竞客户服务热线 7x12 小时"
+        },
+        {
+          "value": "12",
+          "unit": "小时",
+          "text": "12小时",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "wu@edifier.com --> 全国客户服务热线 7x12 小时 400-810-5526 电竞客户服务热线 7x12 小时"
+        },
+        {
+          "value": "12",
+          "unit": "小时",
+          "text": "12小时",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "12 小时 400-810-5526 电竞客户服务热线 7x12 小时 400-600-3968 服务监督邮箱 fuwu@edif"
+        },
+        {
+          "value": "4",
+          "unit": "G",
+          "text": "4G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "h ↑ 返回顶部 没有找到结果 搜索结果( ) 热门搜索 G4 G2 真无线蓝牙耳机 真无线蓝牙耳机 真无线蓝牙耳机 -->"
+        },
+        {
+          "value": "8K",
+          "unit": "",
+          "text": "8K",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "G5M Pro 8K 三模无线专业电竞鼠标"
+        }
+      ],
+      "text_excerpt": "W820NB\n-->\n耳机\n音响\n教育产品\n汽车音响\n麦克风\n助听/辅听\n电竞外设\n产品\n-->\n服务与售后\n下载与支持\n社区\n-->\nShop\n-->\n国际站\n-->\n漫步者商城\n漫步者商城 -->\n没有找到结果\n搜索结果( )\n漫步者\nHECATE\n花再\n声迈\nVOLONA\nSTAX\n定制系列\n漫步者\nHECATE\n花再\nAirpulse\nVOLONA\n定制系列\n专业考试耳机\n专业语音耳机\n单边话务耳机\nUSB 麦克风\n无损系列\n快装系列\n改装系列\n隔音系列\n车载系列\n漫步者\n花再\n漫步者\nHECATE\n-->\nSTAX SPIRIT S5 头戴式平板蓝牙耳机\nW800NB 头戴式主动降噪蓝牙耳机\nComfo Clip Q2 开放式真无线蓝牙耳机\nLolliClip SE 开放式真无线蓝牙耳机\nLolli5 Anc 真无线降噪蓝牙耳机\nH230P Type-C 入耳式有线耳机\nComf"
+    },
+    {
+      "category": "精华",
+      "meta": {
+        "file": "【双11抢先加购】珀莱雅双抗精华特证版美白精华液次抛保湿面部-tmall.com天猫.html",
+        "title": "",
+        "url": "https://detail.tmall.com/item.htm?app=chrome&bxsign=scdOxXROWc1xWAFCjaB3Qozt6Zl3AOYTmeGrDiX_jo1MnxLG2H0njz5KE4FWl7FPKbhn2U3KisyQKlfo7BVNv2fFOF6TovZaP5igw1rTUpPLj91dudaJaqEIiTHusycQmcN&cpp=1&id=613869112484&price=282&shareUniqueId=37029553661&share_crt_v=1&shareurl=true&short_name=h.88OJQatcm5uxNSv&sku_properties=122276315%3A3289490&sourceType=item&sp_tk=b3NlWlRjcHF0Z00%3D&spm=a2159r.13376460.0.0&suid=30698A64-AEC8-4FFE-80D7-42430D40CDF0&tbSocialPopKey=shareItem&tk=oseZTcpqtgM&un=d463645ab163b4048bcc5a13b9bc225d&un_site=0&ut_sk=1.ZSfWTeMEuksDAM8uIHB4%2BaTo_21380790_1787194611811.Copy.1&wxsign=tbwZZ19UhFYOgabmDaPWaFgzNIG2TNqAT4SHLBSxOn4aR7wiHV4cOZ5RUm4mRZemTr40d50ApCn0-NskbKlcZmwGofqdQMV9xEgQzedq1WEeplagU-AN-4creBrqX5tKoaD",
+        "publisher": "detail.tmall.com",
+        "date": "",
+        "sha256": "256d9de169d5b9b64a7c0e806c2d3fca040a9cc0e17874fe758caf0c041aa1fd",
+        "charset": "UTF-8"
+      },
+      "chars": 2721,
+      "values": [
+        {
+          "value": "98",
+          "unit": "%",
+          "text": "98%",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "到此处 上传图片 珀莱雅官方旗舰店 5.0 88VIP好评率98% 平均11小时发货 客服满意度96% 客服 进店 参数 00"
+        },
+        {
+          "value": "96",
+          "unit": "%",
+          "text": "96%",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "5.0 88VIP好评率98% 平均11小时发货 客服满意度96% 客服 进店 参数 00:21 00:34 / 00:34"
+        },
+        {
+          "value": "50",
+          "unit": "ml",
+          "text": "50ml",
+          "metric": "烟酰胺浓度",
+          "metric_certainty": "label",
+          "context": "50ml 30ml 100ml 30.0ml 50.0ml"
+        },
+        {
+          "value": "30",
+          "unit": "ml",
+          "text": "30ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "50ml 30ml 100ml 30.0ml 50.0ml"
+        },
+        {
+          "value": "100",
+          "unit": "ml",
+          "text": "100ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "50ml 30ml 100ml 30.0ml 50.0ml"
+        },
+        {
+          "value": "30.0",
+          "unit": "ml",
+          "text": "30.0ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "50ml 30ml 100ml 30.0ml 50.0ml"
+        },
+        {
+          "value": "50.0",
+          "unit": "ml",
+          "text": "50.0ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "50ml 30ml 100ml 30.0ml 50.0ml"
+        },
+        {
+          "value": "3",
+          "unit": "年",
+          "text": "3年",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "可证号 浙妆20160007,浙妆20230044 保质期 3年 限期使用日期范围 2028-03-01至2029-02-2"
+        },
+        {
+          "value": "36",
+          "unit": "个月",
+          "text": "36个月",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "州市西湖区留下街道西溪路588号 产地 中国 化妆品保质期 36个月 规格类型 正常规格 防晒指数 0 是否为特殊用途化妆品 是"
+        },
+        {
+          "value": "50",
+          "unit": "ml",
+          "text": "50ml",
+          "metric": "烟酰胺浓度",
+          "metric_certainty": "label",
+          "context": "50ml 【多数用户选择】 万人加购"
+        },
+        {
+          "value": "30",
+          "unit": "ml",
+          "text": "30ml",
+          "metric": "烟酰胺浓度",
+          "metric_certainty": "context",
+          "context": "净含量 切换大图模式 50ml 【多数用户选择】 万人加购 30ml 【尝鲜装】 100ml 双抗精华+替换芯【囤货装】 30."
+        },
+        {
+          "value": "100",
+          "unit": "ml",
+          "text": "100ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "100ml 双抗精华+替换芯【囤货装】"
+        },
+        {
+          "value": "30.0",
+          "unit": "ml",
+          "text": "30.0ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "30.0ml 双抗精华+次抛【1+1进阶】"
+        },
+        {
+          "value": "50.0",
+          "unit": "ml",
+          "text": "50.0ml",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "50.0ml 双抗精华+次抛【1+1进阶】"
+        },
+        {
+          "value": "2024",
+          "unit": "A",
+          "text": "2024A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "网络餐饮服务第三方平台备案:浙网餐备2024A330000020"
+        },
+        {
+          "value": "00:21",
+          "unit": "",
+          "text": "00:21",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "8% 平均11小时发货 客服满意度96% 客服 进店 参数 00:21 00:34 / 00:34 倍速 2.0 x 1.5 x"
+        },
+        {
+          "value": "00:34",
+          "unit": "",
+          "text": "00:34",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "00:34 / 00:34"
+        },
+        {
+          "value": "20:00",
+          "unit": "",
+          "text": "20:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "1. 付定金 10.15 20:00开始"
+        },
+        {
+          "value": "20:00",
+          "unit": "",
+          "text": "20:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2. 付尾款 10.20 20:00开始"
+        },
+        {
+          "value": "20:00",
+          "unit": "",
+          "text": "20:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "加入购物车 10.15 20:00开售 定金 ¥30起"
+        }
+      ],
+      "text_excerpt": "【双11抢先加购】珀莱雅双抗精华特证版美白精华液次抛保湿面部-tmall.com天猫\nff2024 \nff2024\n账号管理 | 退出\n查看你的专属权益\n网页无障碍\n淘宝网首页\n已买到的宝贝\n我的淘宝 \n我的足迹 我的卡券包\n 购物车 47\n 收藏夹 \n收藏的宝贝 收藏的店铺\n免费开店 \n淘宝开店 天猫开店 开直播店\n千牛卖家中心 \n开店入驻 已卖出的宝贝 出售中的宝贝 卖家服务市场 卖家培训中心 体检中心 电商学习中心\n帮助中心 \n官方客服 商家客服 消息中心 意见反馈 举报中心 淘宝规则\n珀莱雅防晒霜\n搜索\n搜本店\n宝贝\nCtrl+V 粘贴图片快速图搜\n按图片搜索\nCtrl+V 粘贴图片到此处\n上传图片\n珀莱雅官方旗舰店\n5.0\n88VIP好评率98%\n平均11小时发货\n客服满意度96%\n客服 进店\n参数\n00:21\n00:34 / 00:34\n倍速\n2.0 x\n1.5"
+    },
+    {
+      "category": "商品详情",
+      "meta": {
+        "file": "商品详情.html",
+        "title": "商品详情",
+        "url": "https://www.midea.cn/#/detail?skuId=45597",
+        "publisher": "www.midea.cn",
+        "date": "",
+        "sha256": "970885f5d7829a8eab43cde1d5793b0eb16f31b90cb34674e9e555eaf77d2053",
+        "charset": "UTF-8"
+      },
+      "chars": 3042,
+      "values": [
+        {
+          "value": "1",
+          "unit": "天",
+          "text": "1天",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "时优惠 ¥ 1799 .00 ¥2299.00 距活动结束 1天 17:58:01 颜色 灰色 数量 - + 库存64 配送"
+        },
+        {
+          "value": "220",
+          "unit": "V",
+          "text": "220V",
+          "metric": "电压",
+          "metric_certainty": "label",
+          "context": "电源电压(V) 220V"
+        },
+        {
+          "value": "50",
+          "unit": "Hz",
+          "text": "50Hz",
+          "metric": "快充功率",
+          "metric_certainty": "label",
+          "context": "额定功率(W) 50Hz"
+        },
+        {
+          "value": "4",
+          "unit": "英寸",
+          "text": "4英寸",
+          "metric": "重量",
+          "metric_certainty": "context",
+          "context": "高520 包装重量(kg) 13 包装清单 净水机*1 1/4英寸 PE管*1 3/8英寸 PE管*1 水龙头附件盒*1 说明"
+        },
+        {
+          "value": "8",
+          "unit": "英寸",
+          "text": "8英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": ") 13 包装清单 净水机*1 1/4英寸 PE管*1 3/8英寸 PE管*1 水龙头附件盒*1 说明书*2 浓缩水管夹*1"
+        },
+        {
+          "value": "17:58",
+          "unit": "",
+          "text": "17:58",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "¥ 1799 .00 ¥2299.00 距活动结束 1天 17:58:01 颜色 灰色 数量 - + 库存64 配送 至 有货"
+        },
+        {
+          "value": "21:59",
+          "unit": "",
+          "text": "21:59",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "21:59前付款,预计10月18日(周日)送达"
+        },
+        {
+          "value": "15:01",
+          "unit": "",
+          "text": "15:01",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/10/13 15:01:39"
+        },
+        {
+          "value": "20:00",
+          "unit": "",
+          "text": "20:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/10/10 20:00:07"
+        },
+        {
+          "value": "15:00",
+          "unit": "",
+          "text": "15:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/27 15:00:18"
+        },
+        {
+          "value": "18:12",
+          "unit": "",
+          "text": "18:12",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/26 18:12:45"
+        },
+        {
+          "value": "09:20",
+          "unit": "",
+          "text": "09:20",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "1天后追评 2026-09-27 09:20:14"
+        },
+        {
+          "value": "11:54",
+          "unit": "",
+          "text": "11:54",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/25 11:54:12"
+        },
+        {
+          "value": "20:00",
+          "unit": "",
+          "text": "20:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/19 20:00:04"
+        },
+        {
+          "value": "18:00",
+          "unit": "",
+          "text": "18:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/19 18:00:36"
+        },
+        {
+          "value": "18:00",
+          "unit": "",
+          "text": "18:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/19 18:00:16"
+        },
+        {
+          "value": "19:00",
+          "unit": "",
+          "text": "19:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2026/9/14 19:00:15"
+        }
+      ],
+      "text_excerpt": "商品详情\n家电产品\n品牌优选\n企业购\n集团官网\n津贴卡券\n我的美的\n账户设置\n退出登录\n搜索历史\n清空\n首页 橱下式净水机 美的 橱下式净水机 MRC805C-3000 1200G大通量 侧抽二芯 橱下式净水机 星河\n自营 美的 橱下式净水机 MRC805C-3000 1200G大通量 侧抽二芯 橱下式净水机 星河\n1. 1200G大通量，8膜页侧方3D旋流进水，增大膜有效过滤面积，出水流速更快，3秒接满一杯水\n2. 采用杜邦陶氏FilmTec RO膜，过滤性能更稳定，品质保证\n3. 6年长效RO滤芯，每日使用0负担\n4. 智慧触控大屏双水龙头，一触即发，随心控制，\n5. 两种出水模式，生活水净洗瓜果蔬菜，饮用水即滤即饮\n6. 行业净水领导者，0添加 0阻垢剂 0陈水\n限时优惠\n¥ 1799 .00 ¥2299.00\n距活动结束\n1天 17:58:01\n颜色\n灰色\n数量\n- +\n库存64\n"
+    },
+    {
+      "category": "充电宝",
+      "meta": {
+        "file": "小米移动电源3 20000mAh高配版 参数 - 小米商城.html",
+        "title": "小米移动电源3 20000mAh高配版 参数 - 小米商城",
+        "url": "https://www.mi.com/battery3/specs",
+        "publisher": "www.mi.com",
+        "date": "",
+        "sha256": "09a245c71f38c341db4626d82ff9fa8e80a4ec1b147741763426c1eedec73d82",
+        "charset": "UTF-8"
+      },
+      "chars": 5048,
+      "values": [
+        {
+          "value": "5",
+          "unit": "G",
+          "text": "5G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "Redmi Note 12 5G"
+        },
+        {
+          "value": "5",
+          "unit": "G",
+          "text": "5G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "mi 12S Pro Xiaomi 12S Note 11 5G Xiaomi Civi 2 Xiaomi MIX Fold"
+        },
+        {
+          "value": "10",
+          "unit": "A",
+          "text": "10A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "Xiaomi Civi 1S 黑鲨5 Pro Redmi 10A Redmi K50 Redmi K50 电竞版 Xiaom"
+        },
+        {
+          "value": "4",
+          "unit": "G",
+          "text": "4G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "青春活力版 Note 11 Pro 系列 Note 11 4G Xiaomi Civi 电视  Redmi X65 20"
+        },
+        {
+          "value": "55",
+          "unit": "英寸",
+          "text": "55英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "小米电视6 至尊版 55英寸"
+        },
+        {
+          "value": "65",
+          "unit": "英寸",
+          "text": "65英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "小米电视6 至尊版 65英寸"
+        },
+        {
+          "value": "75",
+          "unit": "英寸",
+          "text": "75英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "小米电视6 至尊版 75英寸"
+        },
+        {
+          "value": "65",
+          "unit": "英寸",
+          "text": "65英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "大师电视 65英寸 OLED"
+        },
+        {
+          "value": "4",
+          "unit": "A",
+          "text": "4A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "2款 金属全面屏电视 大师电视 65英寸 OLED 小米电视4A 60英寸 Redmi 智能电视 X55 小米全面屏电视 米"
+        },
+        {
+          "value": "60",
+          "unit": "英寸",
+          "text": "60英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "金属全面屏电视 大师电视 65英寸 OLED 小米电视4A 60英寸 Redmi 智能电视 X55 小米全面屏电视 米家激光投影"
+        },
+        {
+          "value": "75",
+          "unit": "英寸",
+          "text": "75英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "光投影仪 Redmi 智能电视 MAX 98\" 小米电视5 75英寸 小米电视4A 70英寸 小米电视4S 75英寸 激光投影电"
+        },
+        {
+          "value": "4",
+          "unit": "A",
+          "text": "4A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "i 智能电视 MAX 98\" 小米电视5 75英寸 小米电视4A 70英寸 小米电视4S 75英寸 激光投影电视 家电 "
+        },
+        {
+          "value": "70",
+          "unit": "英寸",
+          "text": "70英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "能电视 MAX 98\" 小米电视5 75英寸 小米电视4A 70英寸 小米电视4S 75英寸 激光投影电视 家电  壁挂空调"
+        },
+        {
+          "value": "75",
+          "unit": "英寸",
+          "text": "75英寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "小米电视5 75英寸 小米电视4A 70英寸 小米电视4S 75英寸 激光投影电视 家电  壁挂空调 立式空调 冰箱 滚筒洗衣"
+        },
+        {
+          "value": "5",
+          "unit": "G",
+          "text": "5G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "小米平板5 Pro 5G"
+        },
+        {
+          "value": "1",
+          "unit": "A",
+          "text": "1A",
+          "metric": "快充功率",
+          "metric_certainty": "label",
+          "context": "小米车载充电器快充版1A1C 100W"
+        },
+        {
+          "value": "100",
+          "unit": "W",
+          "text": "100W",
+          "metric": "快充功率",
+          "metric_certainty": "context",
+          "context": "小米车载充电器快充版1A1C 100W"
+        },
+        {
+          "value": "4",
+          "unit": "A",
+          "text": "4A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "meWiFi 三频 Mesh 路由器 1499元 小米路由器4A 千兆版 129元 查看全部 小米路由器 服务中心 社区 站"
+        },
+        {
+          "value": "74",
+          "unit": "Wh",
+          "text": "74Wh",
+          "metric": "额定能量",
+          "metric_certainty": "label",
+          "context": "电池能量 74Wh 3.7V 20000mAh"
+        },
+        {
+          "value": "3.7",
+          "unit": "V",
+          "text": "3.7V",
+          "metric": "额定能量",
+          "metric_certainty": "label",
+          "context": "电池能量 74Wh 3.7V 20000mAh"
+        },
+        {
+          "value": "20000",
+          "unit": "mAh",
+          "text": "20000mAh",
+          "metric": "额定能量",
+          "metric_certainty": "context",
+          "context": "电池能量 74Wh 3.7V 20000mAh"
+        },
+        {
+          "value": "12600",
+          "unit": "mAh",
+          "text": "12600mAh",
+          "metric": "容量",
+          "metric_certainty": "label",
+          "context": "额定容量 12600mAh(5V 5.4A)"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "容量",
+          "metric_certainty": "context",
+          "context": "额定容量 12600mAh(5V 5.4A)"
+        },
+        {
+          "value": "5.4",
+          "unit": "A",
+          "text": "5.4A",
+          "metric": "容量",
+          "metric_certainty": "context",
+          "context": "额定容量 12600mAh(5V 5.4A)"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "3",
+          "unit": "A",
+          "text": "3A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "9",
+          "unit": "V",
+          "text": "9V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "12",
+          "unit": "V",
+          "text": "12V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "15",
+          "unit": "V",
+          "text": "15V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "20",
+          "unit": "V",
+          "text": "20V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "2.25",
+          "unit": "A",
+          "text": "2.25A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输入参数 5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2.25A"
+        },
+        {
+          "value": "45",
+          "unit": "W",
+          "text": "45W",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "输出参数 45W MAX"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "2.4",
+          "unit": "A",
+          "text": "2.4A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "9",
+          "unit": "V",
+          "text": "9V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "2",
+          "unit": "A",
+          "text": "2A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "12",
+          "unit": "V",
+          "text": "12V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "1.5",
+          "unit": "A",
+          "text": "1.5A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(单口):5V 2.4A / 9V 2A / 12V 1.5A"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(双口):5V 3A"
+        },
+        {
+          "value": "3",
+          "unit": "A",
+          "text": "3A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-A(双口):5V 3A"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "3",
+          "unit": "A",
+          "text": "3A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "9",
+          "unit": "V",
+          "text": "9V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "12",
+          "unit": "V",
+          "text": "12V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "15",
+          "unit": "V",
+          "text": "15V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "20",
+          "unit": "V",
+          "text": "20V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "2",
+          "unit": "A",
+          "text": "2A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "USB-C:5V 3A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "5.4",
+          "unit": "A",
+          "text": "5.4A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "9",
+          "unit": "V",
+          "text": "9V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "3",
+          "unit": "A",
+          "text": "3A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "12",
+          "unit": "V",
+          "text": "12V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "15",
+          "unit": "V",
+          "text": "15V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "20",
+          "unit": "V",
+          "text": "20V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "2",
+          "unit": "A",
+          "text": "2A",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "三口:5V 5.4A / 9V 3A / 12V 3A / 15V 3A / 20V 2A"
+        },
+        {
+          "value": "5",
+          "unit": "℃",
+          "text": "5℃",
+          "metric": "尺寸",
+          "metric_certainty": "context",
+          "context": "12V 3A / 15V 3A / 20V 2A 工作温度 5°C~40°C 产品尺寸 153.5×73.5×27.5mm 充电"
+        },
+        {
+          "value": "40",
+          "unit": "℃",
+          "text": "40℃",
+          "metric": "尺寸",
+          "metric_certainty": "context",
+          "context": "3A / 15V 3A / 20V 2A 工作温度 5°C~40°C 产品尺寸 153.5×73.5×27.5mm 充电时间 约"
+        },
+        {
+          "value": "27.5",
+          "unit": "mm",
+          "text": "27.5mm",
+          "metric": "尺寸",
+          "metric_certainty": "context",
+          "context": "产品尺寸 153.5×73.5×27.5mm"
+        },
+        {
+          "value": "11",
+          "unit": "小时",
+          "text": "11小时",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "充电时间 约 11 小时(5V/2A 充电器,包装内充电线)"
+        },
+        {
+          "value": "5",
+          "unit": "V",
+          "text": "5V",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "充电时间 约 11 小时(5V/2A 充电器,包装内充电线)"
+        },
+        {
+          "value": "9:00",
+          "unit": "",
+          "text": "9:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "9:00-18:00(仅收市话费)"
+        },
+        {
+          "value": "18:00",
+          "unit": "",
+          "text": "18:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "9:00-18:00(仅收市话费)"
+        }
+      ],
+      "text_excerpt": "小米移动电源3 20000mAh高配版 参数 - 小米商城\n小米商城 | MIUI | IoT | 云服务 | 天星数科 | 有品 | 小爱开放平台 | 企业团购 | 资质证照 | 协议规则 | 下载App | 智能生活\n 购物车 （0）\n登录 | 注册 | 消息通知\n 小米将更新隐私政策，请您提前阅读并知悉。 查看详情 \n-->\n小米官网\n全部商品分类\n手机 \nRedmi Note 12 Pro+\nRedmi Note 12 Pro\nRedmi Note 12 5G\nXiaomi 12S Pro\nXiaomi 12S\nNote 11 5G\nXiaomi Civi 2\nXiaomi MIX Fold 2\nRedmi K50 至尊版\nXiaomi 12S Ultra\nXiaomi 12 Pro 天玑版\nNote 11T Pro+\nNote 11T Pro\nXiaomi Civi 1S"
+    },
+    {
+      "category": "婴童辅食",
+      "meta": {
+        "file": "番茄牛肉营养谷物米粉 _ Nestlé China.html",
+        "title": "番茄牛肉营养谷物米粉 | Nestlé China",
+        "url": "https://www.nestle.com.cn/brands/gerber/mifen/guqijiabei/fanqieniurou",
+        "publisher": "Nestlé China",
+        "date": "",
+        "sha256": "aaa07dbc0e512a554b174fee9639f1f2fa676e02de7faa3716051f960c605aa0",
+        "charset": "UTF-8"
+      },
+      "chars": 4404,
+      "values": [],
+      "text_excerpt": "番茄牛肉营养谷物米粉 | Nestlé China\nSkip to main content\n请选择地点\n您正在浏览\n雀巢官方网站\nGlobal\nwww.nestle.com (EN)\nAfrica & Middle East\nCentral-West Africa (EN)\nEast & Southern Africa (EN)\nIran (FA)\nIsrael (Osem) (HE)\nMiddle East & North Africa (AR)\nMiddle East & North Africa (EN)\nTürkiye (TR)\nAmericas\nArgentina (ES)\nBolivia (ES)\nBrazil (PT)\nCanada (EN)\nCanada (FR)\nCaribbean (EN)\nCentral America (ES)\nChile (ES)\nColombi"
+    },
+    {
+      "category": "加湿器",
+      "meta": {
+        "file": "米家无雾加湿器3 400mL_h立即购买-小米商城.html",
+        "title": "米家无雾加湿器3 400mL/h立即购买-小米商城",
+        "url": "https://www.mi.com/shop/buy/detail?product_id=21651&cfrom=search",
+        "publisher": "www.mi.com",
+        "date": "",
+        "sha256": "4942ca1cd2a474b89a36d2831f01dffb192ea1adfec6817fe05e7357b3f49592",
+        "charset": "UTF-8"
+      },
+      "chars": 4269,
+      "values": [
+        {
+          "value": "46",
+          "unit": "mm",
+          "text": "46mm",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "Xiaomi Watch S5 46mm"
+        },
+        {
+          "value": "41",
+          "unit": "mm",
+          "text": "41mm",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "Xiaomi Watch S5 41mm"
+        },
+        {
+          "value": "5",
+          "unit": "G",
+          "text": "5G",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "EDMI K100 Pro 3999元起 REDMI 17 5G 999元起 REDMI Note 17 Pro 1599元"
+        },
+        {
+          "value": "636",
+          "unit": "L",
+          "text": "636L",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "MI Pad 2 Pro 1999元起 家电 米家冰箱 对开636L 1799元 巨省电Pro 立式3匹 超一级能效 米家空调"
+        },
+        {
+          "value": "560",
+          "unit": "L",
+          "text": "560L",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "米家冰箱Pro 微冰鲜双系统 十字平嵌560L 冰晶白"
+        },
+        {
+          "value": "215",
+          "unit": "L",
+          "text": "215L",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "鲜双系统 十字平嵌560L 冰晶白 6999元 米家三门冰箱215L 1499元 米家冰箱无霜三门216L 1199元 路由器"
+        },
+        {
+          "value": "216",
+          "unit": "L",
+          "text": "216L",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "米家冰箱无霜三门216L"
+        },
+        {
+          "value": "29.4",
+          "unit": "dB",
+          "text": "29.4dB",
+          "metric": "加湿量",
+          "metric_certainty": "label",
+          "context": "无雾加湿丨400mL/h加湿量丨29.4dB(A)轻音运行丨3D抗菌滤芯"
+        },
+        {
+          "value": "98",
+          "unit": "寸",
+          "text": "98寸",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "电视适用于:98寸、100寸以上大电视系列"
+        },
+        {
+          "value": "8:00",
+          "unit": "",
+          "text": "8:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "8:00-18:00(仅收市话费)"
+        },
+        {
+          "value": "18:00",
+          "unit": "",
+          "text": "18:00",
+          "metric": "",
+          "metric_certainty": "none",
+          "context": "8:00-18:00(仅收市话费)"
+        }
+      ],
+      "text_excerpt": "米家无雾加湿器3 400mL/h立即购买-小米商城\n小米官网 | 小米商城 | 小米澎湃OS | 小米汽车 | 云服务 | IoT | 有品 | 小爱开放平台 | 资质证照 | 协议规则 |\n下载app\n小米商城APP\n| Select Location\n购物车 （0）\n购物车中还没有商品，赶紧选购吧！\n登录 | 注册 | 消息通知\nGlobal Home Bangladesh Brazil Chile Czechia Egypt France GCC Germany Greece India Indonesia Italy Japan Korea Malaysia Mexico Nepal Netherlands Nigeria Pakistan Philippines Poland Russia Saudi Arabia Singapore Spain Sri Lanka Sweden"
+    }
+  ],
+  "run_id": "import-20261015"
+}

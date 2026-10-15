@@ -69,6 +69,12 @@ META_PUBLISHER = re.compile(
     r"""<meta[^>]+name=["'](?:author|publisher|og:site_name)["'][^>]+content=["']([^"']+)["']""",
     re.IGNORECASE,
 )
+#: 浏览器"另存为"会在文件开头写一行 `<!-- saved from url=(0069)https://... -->`。
+#: 这是**最可靠的来源线索**：canonical 有时缺失或指向别处，而这行就是用户实际访问的地址。
+SAVED_FROM = re.compile(r"saved from url=\(\d+\)(\S+?)\s*-->", re.IGNORECASE)
+OG_SITE = re.compile(
+    r"""<meta[^>]+property=["']og:site_name["'][^>]+content=["']([^"']+)["']""", re.IGNORECASE
+)
 #: 发布时间。两种常见写法都要认：
 #:   ① `<meta property="article:published_time" content="2026-03-11">`（字段名与日期在不同属性里）
 #:   ② `"datePublished": "2026-03-11"`（JSON-LD）
@@ -219,36 +225,71 @@ def read_page(path: Path) -> tuple[str, str]:
 def page_meta(path: Path, body: str) -> dict[str, str]:
     """从另存的 HTML 里抽来源线索。抽不到就留空，绝不编。"""
 
-    head = body[:20000]
     title = ""
-    match = TITLE.search(head)
+    match = TITLE.search(body[:30000])
     if match:
         title = normalize(html_module.unescape(re.sub(r"<[^>]+>", "", match.group(1))))
+    # 优先级：另存注释 > canonical > og:url——另存注释最贴近用户实际访问的页面
     url = ""
-    for pattern in (CANONICAL, OG_URL):
-        found = pattern.search(head)
-        if found:
-            url = found.group(1).strip()
-            break
+    saved = SAVED_FROM.search(body[:2000])
+    if saved:
+        url = saved.group(1).strip()
+    if not url:
+        for pattern in (CANONICAL, OG_URL):
+            found = pattern.search(body[:30000])
+            if found:
+                url = found.group(1).strip()
+                break
     publisher = ""
-    found = META_PUBLISHER.search(head)
-    if found:
-        publisher = normalize(html_module.unescape(found.group(1)))
-    date = _published_time(head)
+    for pattern in (OG_SITE, META_PUBLISHER):
+        found = pattern.search(body[:60000])
+        if found:
+            publisher = normalize(html_module.unescape(found.group(1)))
+            break
+    if not publisher and url:
+        from urllib.parse import urlsplit
+
+        try:
+            publisher = (urlsplit(url).hostname or "").lower()
+        except ValueError:
+            publisher = ""
     return {
         "file": path.name,
         "title": title,
         "url": url,
         "publisher": publisher,
-        "date": date,
+        "date": _published_time(body[:60000]),
         "sha256": sha256_hex(path.read_bytes()),
         "charset": "",
     }
 
 
-def category_of(path: Path) -> str:
+#: 文件名/标题/URL 里的品类关键词。浏览器另存的名字是网页原标题，不带"01-品类"前缀，
+#: 所以按关键词认品类；认不出就退回文件名，由人工在清单里改。
+CATEGORY_HINTS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("充电宝", ("移动电源", "充电宝", "powerbank", "power-bank", "battery")),
+    ("电动牙刷", ("牙刷", "toothbrush", "sonicare", "hx67")),
+    ("降噪耳机", ("耳机", "headphone", "w820")),
+    ("净水器", ("净水", "water-purifier", "滤芯")),
+    ("精华", ("精华", "serum", "烟酰胺")),
+    ("婴童辅食", ("米粉", "辅食", "gerber", "嘉宝", "营养谷物")),
+    ("加湿器", ("加湿", "humidifier")),
+)
+
+
+def category_of(path: Path, *, title: str = "", url: str = "") -> str:
+    """认品类：文件名里已有"品类"就用它，否则按标题/URL 关键词判。"""
+
     match = FILE_NAME.match(path.name)
-    return match.group("name") if match else path.stem
+    stem = match.group("name") if match else path.stem
+    for category, _hints in CATEGORY_HINTS:
+        if stem.strip() == category:
+            return category
+    haystack = f"{stem} {title} {url}".lower()
+    for category, hints in CATEGORY_HINTS:
+        if any(hint.lower() in haystack for hint in hints):
+            return category
+    return stem
 
 
 # --- 抽数值 -----------------------------------------------------------
@@ -334,8 +375,20 @@ def load_facts_entities(root: Path) -> dict[str, list[str]]:
 
 
 def import_dir(directory: Path, facts_entities: Mapping[str, Sequence[str]]) -> dict[str, Any]:
+    """导入一个目录下的另存页。
+
+    **只收顶层文件**：浏览器另存时会生成 `<名字>_files/` 资源目录，里面常常还有一份
+    同名 HTML 副本，一起导入会把每份材料算两遍。
+    """
+
     files = sorted(
-        [p for p in directory.iterdir() if p.is_file() and p.suffix.lower() in (".html", ".htm", ".txt", ".md")],
+        [
+            p
+            for p in directory.iterdir()
+            if p.is_file()
+            and p.suffix.lower() in (".html", ".htm", ".txt")
+            and not p.name.upper().startswith("README")
+        ],
         key=lambda p: p.name,
     )
     pages: list[dict[str, Any]] = []
@@ -345,10 +398,13 @@ def import_dir(directory: Path, facts_entities: Mapping[str, Sequence[str]]) -> 
         meta["charset"] = charset
         pages.append(
             {
-                "category": category_of(path),
+                "category": category_of(
+                    path, title=meta.get("title", ""), url=meta.get("url", "")
+                ),
                 "meta": meta,
                 "chars": len(text),
                 "values": extract_values(text),
+                "text_excerpt": text[:400],
             }
         )
     return {

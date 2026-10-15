@@ -1,6 +1,6 @@
 {
-  "facts_version": "f3",
-  "description": "结构化事实库。同一实体与指标可能存在多条互相冲突的记录，这是刻意的——运行时必须能识别冲突而不是取第一条。",
+  "facts_version": "f4",
+  "description": "结构化事实库。同一实体与指标可能存在多条互相冲突的记录，这是刻意的——运行时必须能识别冲突而不是取第一条。 f4（2026-10-15）：加入小米移动电源3 20000mAh 高配版的厂商标称值。",
   "facts": [
     {
       "entity": "青禾 X1",
@@ -322,6 +322,65 @@
       "date": "2025-06-15",
       "tier": "B",
       "note": "厂商标称，废水:净水 = 1:1，归一成 1.0"
+    },
+    {
+      "entity": "小米移动电源3 20000mAh 高配版",
+      "metric": "额定能量",
+      "value": 74,
+      "unit": "Wh",
+      "period": "",
+      "source_id": "S-025",
+      "date": "",
+      "tier": "A",
+      "note": "厂商标称的电池能量。对照民航 100Wh 免申报上限使用。"
+    },
+    {
+      "entity": "小米移动电源3 20000mAh 高配版",
+      "metric": "容量",
+      "value": 20000,
+      "unit": "mAh",
+      "period": "",
+      "source_id": "S-025",
+      "date": "",
+      "tier": "A",
+      "conditions": "电芯容量，3.7V",
+      "note": "电芯容量（3.7V 标称）"
+    },
+    {
+      "entity": "小米移动电源3 20000mAh 高配版",
+      "metric": "额定容量",
+      "value": 12600,
+      "unit": "mAh",
+      "period": "",
+      "source_id": "S-025",
+      "date": "",
+      "tier": "A",
+      "conditions": "5V 5.4A 输出条件下",
+      "note": "额定容量与电芯容量不是同一口径：20000mAh 是电芯，12600mAh 是 5V 输出下可放出的电量"
+    },
+    {
+      "entity": "小米移动电源3 20000mAh 高配版",
+      "metric": "快充功率",
+      "value": 45,
+      "unit": "W",
+      "period": "",
+      "source_id": "S-025",
+      "date": "",
+      "tier": "A",
+      "conditions": "整机输出上限",
+      "note": "输出参数 45W MAX"
+    },
+    {
+      "entity": "小米移动电源3 20000mAh 高配版",
+      "metric": "充电时间",
+      "value": 11,
+      "unit": "小时",
+      "period": "",
+      "source_id": "S-025",
+      "date": "",
+      "tier": "A",
+      "conditions": "5V/2A 充电器、包装内充电线",
+      "note": "厂商给出的是特定充电器条件下的时间，条件必须一起引用"
     }
   ]
 }

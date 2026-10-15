@@ -1,12 +1,16 @@
 __pycache__/
 *.pyc
-runs/
+runs/*
+!runs/import-20261015/
+!runs/corpus-backup-20261015-162644/
 .env.local
 # 界面上的复核记录属于本地运行数据，不进仓库
 app/reviews.jsonl
-# 写入过程中的临时文件
 *.tmp
-# 第三方网页另存内容：只在本机使用，不进公开仓库（版权与条款）
+# 第三方网页另存内容与抓回的原文：只在本机使用，不进公开仓库
 data/imports/*.html
 data/imports/*.htm
 data/imports/*.txt
+data/imports/*_files/
+runs/*/snapshots/
+runs/*/trace.jsonl
