@@ -1,0 +1,25 @@
+{
+  "adapter": "stub",
+  "model_id": "deepseek-flash",
+  "base_url": "https://api.deepseek.com",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "json_mode": true,
+  "reasoning_effort": "low",
+  "thinking": null,
+  "steps": {
+    "extract": {"thinking": "disabled"},
+    "judge": {"thinking": "disabled"}
+  },
+  "temperature": 0,
+  "max_tokens": 3000,
+  "timeout_s": 60,
+  "max_retries": 2,
+  "backoff_s": 1.5,
+  "pipeline": "v2",
+  "match_threshold": 0.3,
+  "pricing": {
+    "mode": "off_peak",
+    "off_peak": {"prompt_per_mtok": 1.0, "completion_per_mtok": 4.0},
+    "peak": {"prompt_per_mtok": 2.0, "completion_per_mtok": 8.0}
+  }
+}

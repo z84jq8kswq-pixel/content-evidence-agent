@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工具与语料 · 内容证据核查工作台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      内容证据核查工作台
+    </div>
+    <nav class="mode-switch" aria-label="工作台入口">
+      <a class="mode" href="/workbench">内容研判</a>
+      <a class="mode" href="/agent">待复核队列</a>
+      <a class="mode" href="/">评测与版本</a>
+      <a class="mode active" href="/tools">工具与语料</a>
+    </nav>
+    <div class="topbar-controls"></div>
+  </header>
+
+  <main>
+    <section id="tools-head" class="task-head"></section>
+    <div id="tool-grid" class="tool-grid"></div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/static/tools.js"></script>
+</body>
+</html>

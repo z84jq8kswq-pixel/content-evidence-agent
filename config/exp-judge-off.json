@@ -1,0 +1,14 @@
+{
+  "adapter": "deepseek",
+  "model_id": "deepseek-flash",
+  "pipeline": "v2",
+  "temperature": 0,
+  "max_tokens": 3000,
+  "reasoning_effort": "low",
+  "thinking": null,
+  "steps": {
+    "extract": { "thinking": "disabled" },
+    "judge": { "thinking": "disabled" }
+  },
+  "pricing": { "mode": "off_peak" }
+}

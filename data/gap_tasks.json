@@ -1,0 +1,617 @@
+{
+  "gap_version": "g4",
+  "description": "缺口任务：用户给的资料不足，关键证据只能靠检索拿到。用于评测 v3 的自主检索能力，并给出 v2（资料直接注入）的理论上界。标注除结论外还包含最优工具集，用来衡量'过程对不对'。　g2（2026-10-13）：扩样第一批 6 条，压\"长句多判断\"与\"主观句混入\"两种形状。　g3（2026-10-14）：扩样第二批 6 条，压\"指代\"与\"指标粒度混淆\"两种形状。　g4（2026-10-14）：GAP-009 的废水比从能力缺口改成正常题（补了比例型指标比对）。",
+  "cases": [
+    {
+      "id": "GAP-001",
+      "category": "数值夸大",
+      "difficulty": "easy",
+      "content": "云石 P20 和青禾 X1 的对比笔记：云石 P20 充电宝容量 20000mAh；青禾 X1 电动牙刷续航 60 天，出差两个月都不用带充电器。",
+      "given_sources": [
+        "S-004"
+      ],
+      "what_it_tests": "用户只提供了一条带货文案，关键证据（厂商规格页）需要自己检索",
+      "expected_claims": [
+        {
+          "text": "青禾 X1 续航 60 天",
+          "expected_tier": "downrank",
+          "expected_state": "JUDGED",
+          "verdict": "CONTRADICTED",
+          "flags": [],
+          "evidence": [
+            "S-001"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "相差",
+          "note": "只有带货文案时 v2 会判成支持；必须拿到厂商标称的 21 天才判得出夸大"
+        }
+      ]
+    },
+    {
+      "id": "GAP-002",
+      "category": "过时认证",
+      "difficulty": "hard",
+      "content": "青禾 X1 电动牙刷使用体验：刷牙震感舒服，续航表现不错，还获得过口腔护理协会认证。",
+      "given_sources": [
+        "S-006"
+      ],
+      "what_it_tests": "用户拿的是三年前的认证名录，当年状态需要检索；分清'过期'与'查不到'",
+      "expected_claims": [
+        {
+          "text": "获得口腔护理协会认证",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S-005",
+            "S-006"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "过期",
+          "note": "2023 年在列、2025 年未列入，属于新记录覆盖旧记录"
+        }
+      ]
+    },
+    {
+      "id": "GAP-003",
+      "category": "来源冲突",
+      "difficulty": "hard",
+      "content": "云石 P20 充电宝开箱：20000mAh 大容量，额定能量 74Wh，可以带上飞机。",
+      "given_sources": [
+        "S-008"
+      ],
+      "what_it_tests": "厂商标称与第三方实测相差 16%，要求识别冲突而不是取第一条",
+      "expected_claims": [
+        {
+          "text": "云石 P20 额定能量 74Wh",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "NOT_COMPARABLE"
+          ],
+          "evidence": [
+            "S-008",
+            "S-010"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "测试条件不同",
+          "note": "厂商标称与负载下实测本来就不是同一件事：这是'不可比'，不是'冲突'。只看厂商资料会直接判支持。"
+        },
+        {
+          "text": "可以带上飞机",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-008",
+            "S-010"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "不超过",
+          "note": "许可型主张：74Wh 与 62Wh 虽互相冲突，但都在 100Wh 限额以内，所以结论成立。阈值判定能吸收这类分歧。原始任务只标了一条主张，这条是补上的——它暴露了'说法没被当成主张'和'字面检索够不到法规文档'两个问题。"
+        }
+      ]
+    },
+    {
+      "id": "GAP-004",
+      "category": "只有低等级来源",
+      "difficulty": "medium",
+      "content": "云石 P20 充电宝的负面汇总：有用户反映电池过热隐患，建议先别买。",
+      "given_sources": [
+        "S-012"
+      ],
+      "what_it_tests": "只有匿名帖这类低等级来源时，应该明确说证据不足，而不是判成确定结论",
+      "expected_claims": [
+        {
+          "text": "云石 P20 有电池过热隐患",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S-012"
+          ],
+          "optimal_tools": [
+            "search_notes"
+          ],
+          "reason_contains": "证据不足",
+          "note": "预期这条会暴露已知缺陷：检索没有相关性阈值，无关的权威文档会把'证据充分'顶起来；2026-10-13 补记：D 级匿名来源按 02 号文档应标 LOW_SOURCE_QUALITY，这条漏标是模型判定时暴露的，已补"
+        }
+      ]
+    },
+    {
+      "id": "GAP-005",
+      "category": "零资料",
+      "difficulty": "easy",
+      "content": "云石 P20 充电宝的实际参数：容量 20000mAh。",
+      "given_sources": [],
+      "what_it_tests": "用户什么都不给，全部依赖自主检索",
+      "expected_claims": [
+        {
+          "text": "云石 P20 容量 20000mAh",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-008"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "v2 在零资料下没有任何可判断的输入"
+        }
+      ]
+    },
+    {
+      "id": "GAP-006",
+      "category": "检索不到",
+      "difficulty": "medium",
+      "content": "莱茵 H9 净水器的宣传：滤芯寿命长达 3 年，换芯频率低。",
+      "given_sources": [],
+      "what_it_tests": "换策略后仍然查不到，必须明确交回给人，不许猜一个结论",
+      "expected_claims": [
+        {
+          "text": "莱茵 H9 滤芯寿命 3 年",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "optimal_tools": [
+            "search_notes"
+          ],
+          "reason_contains": "",
+          "note": "语料里完全没有这个产品，属于'查不到'而不是'查不了'　2026-10-13 扩样后改：语料里出现了别的产品的\"滤芯\"文档，检索层没有相关性／实体门禁，这条从\"检索用尽\"变成了\"证据充分但规则无法判定\"。状态仍然正确（该交回给人），理由暂时不检查——它记录的是 13 号文档已知局限 1 的第三次现形。"
+        }
+      ]
+    },
+    {
+      "id": "GAP-007",
+      "category": "指标粒度",
+      "difficulty": "hard",
+      "content": "青禾 X1 电动牙刷宣称通过了欧盟 CE 认证，符合欧洲标准。",
+      "given_sources": [],
+      "what_it_tests": "主张里的认证与事实库里的认证不是同一个，要求识别为'查不到'而不是误判过期",
+      "expected_claims": [
+        {
+          "text": "通过了欧盟 CE 认证",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "证据不足",
+          "note": "预期这条会暴露已知缺陷：'认证'指标粒度太粗，会把 CE 认证误判成口腔护理协会认证过期"
+        }
+      ]
+    },
+    {
+      "id": "GAP-008",
+      "category": "长句多判断",
+      "difficulty": "medium",
+      "content": "澜声 A2 降噪耳机：标称续航 40 小时、开启降噪 28 小时，支持 45W 快充。",
+      "given_sources": [
+        "S-014"
+      ],
+      "what_it_tests": "一句话里三个可核查判断，抽取必须按逗号/顿号拆开；其中一条与厂商标称冲突（45W vs 18W）",
+      "expected_claims": [
+        {
+          "text": "澜声 A2 续航 40 小时",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-013",
+            "S-014"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "标称 40 与第三方实测 37.5 差约 6%，在 10% 容差内，判支持（口径见 13 号文档）"
+        },
+        {
+          "text": "澜声 A2 开启降噪续航 28 小时",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-013"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "降噪续航是独立指标（与关闭降噪的 40 小时不是同一个数）：这条同时压“同单位不同指标”的比对"
+        },
+        {
+          "text": "澜声 A2 支持 45W 快充",
+          "expected_tier": "manual",
+          "expected_state": "JUDGED",
+          "verdict": "CONTRADICTED",
+          "flags": [],
+          "evidence": [
+            "S-013"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "相差",
+          "note": "规格页写 18W，相差 150%；单来源 → E2 → R9 转人工"
+        }
+      ]
+    },
+    {
+      "id": "GAP-009",
+      "category": "长句多判断",
+      "difficulty": "hard",
+      "content": "沁澜 R3 净水器：通量 1200G，废水比 1:1，滤芯寿命 3 年。",
+      "given_sources": [],
+      "what_it_tests": "三个判断挤在一句里；滤芯寿命被 2023 版旧规格覆盖（过期），废水比是比例型指标（系统暂无比对路径）",
+      "expected_claims": [
+        {
+          "text": "沁澜 R3 通量 1200G",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-015"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "只有 2025 版规格页给出通量，无旧值可比"
+        },
+        {
+          "text": "沁澜 R3 滤芯寿命 3 年",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S-015",
+            "S-016"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "过期",
+          "note": "2023 版写 2 年、2025 版写 3 年，相隔 715 天 → 新记录覆盖旧记录，不做判定"
+        },
+        {
+          "text": "沁澜 R3 废水比 1:1",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-015"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "比例型写法归一成 1.0（废水:净水），与规格页一致。2026-10-14 修：此前系统没有比例比对路径，这条只能转人工；补上 RATIO 解析与 :1 单位后能正常判定"
+        }
+      ]
+    },
+    {
+      "id": "GAP-010",
+      "category": "长句多判断",
+      "difficulty": "easy",
+      "content": "澄野 C5 精华：烟酰胺浓度 5%，容量 30ml，质地清爽不黏腻。",
+      "given_sources": [
+        "S-018"
+      ],
+      "what_it_tests": "前两条可核查、第三条是主观描述应当丢掉；另有一条 D 级文案把浓度写成 10%，低等级来源不该构成冲突",
+      "expected_claims": [
+        {
+          "text": "澄野 C5 烟酰胺浓度 5%",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-017"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "S-018 是 D 级推广文案（写 10%），按战力规则低等级来源不参与冲突判定"
+        },
+        {
+          "text": "澄野 C5 容量 30ml",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-017"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "GAP-011",
+      "category": "主观句混入",
+      "difficulty": "easy",
+      "content": "青禾 X1 电动牙刷用了半年，刷牙震感舒服，续航 21 天完全够用，推荐给朋友了。",
+      "given_sources": [
+        "S-004"
+      ],
+      "what_it_tests": "四段里只有一段可核查，其余是主观体验；抽取器应当只留下可核查的那条",
+      "expected_claims": [
+        {
+          "text": "青禾 X1 续航 21 天",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-001",
+            "S-002"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "21 与厂商标称一致，与第三方 19.5 差 7.7%，在容差内——两条都支撑这个结论"
+        }
+      ]
+    },
+    {
+      "id": "GAP-012",
+      "category": "主观句混入",
+      "difficulty": "medium",
+      "content": "云石 P20 充电宝手感扎实，做工不错，额定能量 74Wh，出门带它很安心。",
+      "given_sources": [
+        "S-009"
+      ],
+      "what_it_tests": "主观句与可核查数值混在一起；留下那条恰好是厂商标称与实测不可比的额定能量",
+      "expected_claims": [
+        {
+          "text": "云石 P20 额定能量 74Wh",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "NOT_COMPARABLE"
+          ],
+          "evidence": [
+            "S-008",
+            "S-010"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "测试条件不同",
+          "note": "与 GAP-003 同一条不可比规则，但这次要先把主观句丢掉才轮得到它"
+        }
+      ]
+    },
+    {
+      "id": "GAP-013",
+      "category": "主观句混入",
+      "difficulty": "easy",
+      "content": "禾初 有机米粉很好冲，宝宝爱吃，含铁量 6.5mg。",
+      "given_sources": [],
+      "what_it_tests": "婴儿食品类主张 + 两句主观评价；这类内容最容易把“宝宝爱吃”当成事实主张抽出来",
+      "expected_claims": [
+        {
+          "text": "禾初 有机米粉含铁量 6.5mg",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-019"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "规格页写 6.5mg（每 100g），与主张一致"
+        }
+      ]
+    },
+    {
+      "id": "GAP-014",
+      "category": "指代",
+      "difficulty": "easy",
+      "content": "入手了澜声 A2。这款耳机标称续航 40 小时，降噪开到最大也能用 28 小时。",
+      "given_sources": [],
+      "what_it_tests": "主体只在第一句出现，后面用“这款耳机”指代——实体识别必须看正文，不能只看主张本身",
+      "expected_claims": [
+        {
+          "text": "澜声 A2 标称续航 40 小时",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-013",
+            "S-014"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "与第三方实测 37.5 差 6.7%，在容差内"
+        },
+        {
+          "text": "降噪开到最大也能用 28 小时",
+          "expected_tier": "release",
+          "expected_state": "JUDGED",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S-013"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "一致",
+          "note": "标注照抄内容原话（07 号文档问题一：不要改写成资料能支持的版本）；主体靠正文指代表达"
+        }
+      ]
+    },
+    {
+      "id": "GAP-015",
+      "category": "指代",
+      "difficulty": "medium",
+      "content": "朋友家装了沁澜 R3，店员说这款的滤芯能用 3 年。",
+      "given_sources": [],
+      "what_it_tests": "指代 + 转述（“店员说”）；这条的数字来自人情转述，但核查对象仍是产品参数",
+      "expected_claims": [
+        {
+          "text": "店员说这款的滤芯能用 3 年",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S-015",
+            "S-016"
+          ],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "过期",
+          "note": "2023 版 2 年、2025 版 3 年，相隔 715 天 → 新记录覆盖旧记录；标注照抄内容原话"
+        }
+      ]
+    },
+    {
+      "id": "GAP-016",
+      "category": "指代",
+      "difficulty": "hard",
+      "content": "同事推荐了沐野 M1，说它水箱容量 4L，晚上不用加水。",
+      "given_sources": [],
+      "what_it_tests": "指代 + 只有低等级来源：语料里这个产品只有一条用户发帖，要求一路换策略后交回给人（同时锁住策略阶梯的第三档能跑到）",
+      "expected_claims": [
+        {
+          "text": "沐野 M1 水箱容量 4L",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S-020"
+          ],
+          "optimal_tools": [
+            "lookup_fact",
+            "search_notes",
+            "fetch_source"
+          ],
+          "reason_contains": "用尽",
+          "note": "唯一来源是 D 级用户发帖：查得到、但不够格下结论。这条同时证明策略阶梯第三档（取原文定位）真的跑得到"
+        }
+      ]
+    },
+    {
+      "id": "GAP-017",
+      "category": "指标粒度",
+      "difficulty": "hard",
+      "content": "沁澜 R3 净水器通过了 NSF 认证。",
+      "given_sources": [],
+      "what_it_tests": "事实库里的“认证”是水效标识，不是 NSF——要求认出“查不到该认证”而不是拿另一个认证去判",
+      "expected_claims": [
+        {
+          "text": "沁澜 R3 通过 NSF 认证",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "证据不足",
+          "note": "预期暴露已知缺陷：“认证”指标粒度太粗，系统会拿水效标识的两条记录判成“过期”（GAP-007 同类，第三次现形）。标注按规则写：查不到就是证据不足"
+        }
+      ]
+    },
+    {
+      "id": "GAP-018",
+      "category": "指标粒度",
+      "difficulty": "hard",
+      "content": "澜声 A2 耳机通过 Hi-Res Audio 认证。",
+      "given_sources": [],
+      "what_it_tests": "只有蓝牙认证的记录，主张说的是音频类认证——同样要判“查不到”",
+      "expected_claims": [
+        {
+          "text": "澜声 A2 通过 Hi-Res Audio 认证",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "证据不足",
+          "note": "预期暴露同一缺陷的另一种表现：单条认证记录不构成冲突，系统会走到“证据充分但规则无法判定”。规则层判不了时应当说“证据不足”，而不是说“证据充分”"
+        }
+      ]
+    },
+    {
+      "id": "GAP-019",
+      "category": "指标粒度",
+      "difficulty": "hard",
+      "content": "禾初 有机米粉获得有机认证。",
+      "given_sources": [],
+      "what_it_tests": "事实库里是生产许可，主张说的是有机认证——婴儿食品类，判错代价高",
+      "expected_claims": [
+        {
+          "text": "禾初 有机米粉获得有机认证",
+          "expected_tier": "manual",
+          "expected_state": "ESCALATED",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "optimal_tools": [
+            "lookup_fact"
+          ],
+          "reason_contains": "证据不足",
+          "note": "与 GAP-018 同型；三条粒度题一起用来量这个缺陷的出现频率"
+        }
+      ]
+    }
+  ]
+}

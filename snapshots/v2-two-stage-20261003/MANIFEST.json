@@ -1,0 +1,276 @@
+{
+  "snapshot": "v2-two-stage-20261003",
+  "created_at": "2026-10-03T22:11:02+08:00",
+  "description": "内容证据核查 Agent 的 v2 两段式管线快照",
+  "model_id": "deepseek-flash",
+  "base_url": "https://api.deepseek.com",
+  "pipeline": "v2",
+  "eval_set_hash": "6000dcf4",
+  "eval_set_cases": 30,
+  "files": [
+    {
+      "path": ".env.local",
+      "sha256": "b6c027d1c6db0d90e57ae4b114b3599d5eeb1abd563b26c55bcdf48611e9d3c6",
+      "bytes": 57,
+      "included": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "3d5343cd3ce9a6828bcf7ec218960b205c7bfccda081b15931fc9581a060eec4",
+      "bytes": 36,
+      "included": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "e172bcf4e0877c370393c33082449c9e51926ee1e06d0c26ce4b0323e8dac5e5",
+      "bytes": 6639,
+      "included": false
+    },
+    {
+      "path": "app/server.py",
+      "sha256": "be7156deae913b999f50c6d7da53f0594104fe1e41d0ddcc45363218814318f5",
+      "bytes": 14331,
+      "included": true
+    },
+    {
+      "path": "app/static/app.js",
+      "sha256": "48624da2a79ad120264ec9098751b4166f4432b323deed04e90367ba3066a8b2",
+      "bytes": 16410,
+      "included": true
+    },
+    {
+      "path": "app/static/index.html",
+      "sha256": "8004ba15c9ee75695943b5dfed7ba7c08e98a2670af0df201b564429ec69769e",
+      "bytes": 1482,
+      "included": true
+    },
+    {
+      "path": "app/static/style.css",
+      "sha256": "1035d9edd618b09bd513f3a08a95d185a0f75c1c607a4283135cfe3560003081",
+      "bytes": 5975,
+      "included": true
+    },
+    {
+      "path": "config/default.json",
+      "sha256": "d69618abae310808eea8f674fd5973ba992e921493dae573e709919ce1f6cf2d",
+      "bytes": 628,
+      "included": true
+    },
+    {
+      "path": "config/exp-judge-low.json",
+      "sha256": "bb7188388a85f41a7ee35d7a60fc73af0f7021c28b3639be407d72946b770c48",
+      "bytes": 312,
+      "included": true
+    },
+    {
+      "path": "config/exp-judge-off.json",
+      "sha256": "e11f771c7b98c0f9e524b3fcb66a8f9561be8295aa5597e5788e4b28bf061de6",
+      "bytes": 309,
+      "included": true
+    },
+    {
+      "path": "config/exp-pipeline-v1.json",
+      "sha256": "47bddff1bfebccacff3611a6b5309b05a5151d0709ac6e542922b56fc8de8097",
+      "bytes": 270,
+      "included": true
+    },
+    {
+      "path": "data/eval_tasks.json",
+      "sha256": "6000dcf4aae28b2010470ecdbd766c54eeceafdfa1170c659b07aad577c15e80",
+      "bytes": 27712,
+      "included": true
+    },
+    {
+      "path": "docs/01-scenario-definition.md",
+      "sha256": "66dac730afb09dff07f68824d355fda3f07fe05106ddd94551547f7e34c95d75",
+      "bytes": 6792,
+      "included": true
+    },
+    {
+      "path": "docs/02-labeling-rules.md",
+      "sha256": "796a130893721120f0b97bf7a761273abddde137e900ff2d3cb28dbddcc756e6",
+      "bytes": 6880,
+      "included": true
+    },
+    {
+      "path": "docs/03-task-overview.md",
+      "sha256": "ba3dfe01c5b853244bf52ce833e376a82040829ce36d66dd9f216a3618591c46",
+      "bytes": 3639,
+      "included": true
+    },
+    {
+      "path": "docs/04-harness.md",
+      "sha256": "68361f3f841f2773cdc03ccdd04fa13f1810572608a61be1ece8258c8d1f64b9",
+      "bytes": 3472,
+      "included": true
+    },
+    {
+      "path": "docs/05-first-real-run.md",
+      "sha256": "1f4e9794c664101d1e027b7de898147c0dd09c5184b6513a84eddfab8ebea1fb",
+      "bytes": 4031,
+      "included": true
+    },
+    {
+      "path": "docs/06-reasoning-budget-experiment.md",
+      "sha256": "739fad9b3c7f24add8dd2cc0ea9bc540fbbadefc077be695b40cb83fa7c8012e",
+      "bytes": 5858,
+      "included": true
+    },
+    {
+      "path": "docs/07-annotation-review.md",
+      "sha256": "76210c4b35ac86936ad7f18ea5b322481cad1ff24d29d9b9656a28c0b8a8aaf9",
+      "bytes": 5644,
+      "included": true
+    },
+    {
+      "path": "docs/08-pipeline-comparison.md",
+      "sha256": "a53b986d208b4a846a9ee45574f1660cf20db22194064f89169f43a18791118b",
+      "bytes": 4370,
+      "included": true
+    },
+    {
+      "path": "docs/09-web-interface.md",
+      "sha256": "6aa086b8c9076b2828b7187bcab4b0d8362e26d72cddc5cb249a80e1bd9a0b67",
+      "bytes": 4424,
+      "included": true
+    },
+    {
+      "path": "harness/compare_runs.py",
+      "sha256": "a1d69bb01077fb1a4345354b0f46bbb2799b7839384c5750ebb8a68697481085",
+      "bytes": 1809,
+      "included": true
+    },
+    {
+      "path": "harness/probe_model.py",
+      "sha256": "12e6a21bd25ad52b9ecb8f4480f054996989c15f06f7ec42bef0d058ca564ec5",
+      "bytes": 4944,
+      "included": true
+    },
+    {
+      "path": "harness/rescore.py",
+      "sha256": "26b4c650af463e26e630d4b2184980a8c77e75310043af261045e71431e10678",
+      "bytes": 5912,
+      "included": true
+    },
+    {
+      "path": "harness/run_eval.py",
+      "sha256": "f12d2f2223d224b2fc7a61f4fa6b6993ed6f60e0cf629399f1792788f555d4a4",
+      "bytes": 14318,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/__init__.py",
+      "sha256": "cbd486f12a5b0e5d3011454889fdaa1af3fac4a46ebc9df79d2e3de2294d0147",
+      "bytes": 61,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/compare.py",
+      "sha256": "2ea2bebda45c4b87e02b058c2d0c5768924a0aed066ae10920cfa9bff4c19fcf",
+      "bytes": 8340,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/config.py",
+      "sha256": "f9e69d2b9bccb6ea7925f25a243a3228529dd362c5711687627c5aa70f0f2805",
+      "bytes": 2023,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/dataset.py",
+      "sha256": "33a76567fefa85a266650a2bb21ec9a12a3e89a045b9d84e7398b325d2536962",
+      "bytes": 1552,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/envfile.py",
+      "sha256": "a595bdd4290907f1282ea4ffc4e6a402354fe8899ebc3326f8d76ea4b0621414",
+      "bytes": 1128,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/matching.py",
+      "sha256": "75706790842c61738cfcdea92592cc3b0efe181e0ffdb0a85330f6dc21a912e3",
+      "bytes": 2775,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/metrics.py",
+      "sha256": "73389e6150b6549445f35f7ac4d473c51b331f651316ca043a6112d00c85c964",
+      "bytes": 8248,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/models.py",
+      "sha256": "8435e4df26c752a07d8f70618bf7ddce93afa48368a31808fa6fc78173206e57",
+      "bytes": 6589,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/pipeline.py",
+      "sha256": "0d0caa9b3da18dc9f0ac5be2502e44dd34031e5a6b13d1dddf2367b3202f70e1",
+      "bytes": 14522,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/prompts.py",
+      "sha256": "f977e025fcff0af37a5a6ce4cb73455101a3bbf047860369f864729ea3519ea1",
+      "bytes": 6784,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/report.py",
+      "sha256": "d1c793a5cffffafa44d2f82ff0655874fb598eb7b75a663a2f753eff0a784ed6",
+      "bytes": 7635,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/runio.py",
+      "sha256": "9331b603bc5de721b103dbbfe2b64a2d7e091cd2115ebbe48b161b7bdce8af0d",
+      "bytes": 3185,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/trace.py",
+      "sha256": "bd611d5cfa39960654001cb1112b0ea3adaeaee1008ee7c22b0dffd7e54c722d",
+      "bytes": 2684,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/adapters/__init__.py",
+      "sha256": "57164dc3c5427670b0717572ed4e0ad14af9605f6a9b76cd5ab03c6a0684ca57",
+      "bytes": 417,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/adapters/base.py",
+      "sha256": "984748c56ee099ada1905052125a787a22ed6695273a9c6c79a2c280378587f0",
+      "bytes": 5302,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/adapters/deepseek.py",
+      "sha256": "c1b4d5ecfca6ba272c3b81c9686a1ec46a356417f7058b011a0f00b51bf389b1",
+      "bytes": 5281,
+      "included": true
+    },
+    {
+      "path": "src/evidence_agent/adapters/stub.py",
+      "sha256": "23243428f74e1c9d36881377d4d0e89e9ff96965e9b34172ca96426b1aeb5261",
+      "bytes": 4468,
+      "included": true
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "5f96c1b63d3960a7926f54f9fa4e949d5c3591746f83c1a22d6ac479f809a788",
+      "bytes": 259,
+      "included": true
+    },
+    {
+      "path": "tests/test_harness.py",
+      "sha256": "7dbed88d8125e43165c5e78993b4b58711c50651b0accbb0c9f4b43dc288c3c0",
+      "bytes": 12901,
+      "included": true
+    }
+  ]
+}

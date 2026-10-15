@@ -1,0 +1,1932 @@
+{
+  "meta": {
+    "run_id": "20261003-200654-deepseek-v1",
+    "started_at": "2026-10-03T12:06:54+00:00",
+    "config_path": "config/exp-pipeline-v1.json",
+    "adapter": "deepseek",
+    "model_id": "deepseek-flash",
+    "pipeline": "v1",
+    "temperature": 0,
+    "max_tokens": 3000,
+    "case_ids": [
+      "EV-001",
+      "EV-002",
+      "EV-003",
+      "EV-004",
+      "EV-005",
+      "EV-006",
+      "EV-007",
+      "EV-008",
+      "EV-009",
+      "EV-010",
+      "EV-011",
+      "EV-012",
+      "EV-013",
+      "EV-014",
+      "EV-015",
+      "EV-016",
+      "EV-017",
+      "EV-018",
+      "EV-019",
+      "EV-020",
+      "EV-021",
+      "EV-022",
+      "EV-023",
+      "EV-024",
+      "EV-025",
+      "EV-026",
+      "EV-027",
+      "EV-028",
+      "EV-029",
+      "EV-030"
+    ],
+    "pricing": {
+      "mode": "off_peak",
+      "off_peak": {
+        "prompt_per_mtok": 1.0,
+        "completion_per_mtok": 4.0
+      },
+      "peak": {
+        "prompt_per_mtok": 2.0,
+        "completion_per_mtok": 8.0
+      }
+    },
+    "steps": {
+      "all": {
+        "thinking": "disabled"
+      }
+    },
+    "dataset": "eval_tasks.json",
+    "note": ""
+  },
+  "summary": {
+    "cases": 30,
+    "claim_recall": 1.0,
+    "claim_precision": 0.8974,
+    "verdict_accuracy": 0.7429,
+    "flag_recall": 0.7241,
+    "citation_precision_proxy": 0.6129,
+    "review_queue_agreement": 0.9429,
+    "unsupported_certainty_rate": 0.0833,
+    "insufficient_expected": 12,
+    "insufficient_answered": 12,
+    "insufficient_missed": 0,
+    "unsupported_certain_count": 1,
+    "p0_errors": 1,
+    "p1_errors": 18,
+    "failed_cases": [],
+    "format_violation_cases": [],
+    "format_violation_rate": 0.0,
+    "model_calls": 30,
+    "prompt_tokens": 18630,
+    "completion_tokens": 4402,
+    "avg_latency_ms": 1561,
+    "max_latency_ms": 2179,
+    "score_by_case": [
+      {
+        "case_id": "EV-001",
+        "category": "supported",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 2,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [
+          "每天通勤两小时，一周才充一次电"
+        ],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.70"
+        ]
+      },
+      {
+        "case_id": "EV-002",
+        "category": "supported",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.76"
+        ]
+      },
+      {
+        "case_id": "EV-003",
+        "category": "supported",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.58"
+        ]
+      },
+      {
+        "case_id": "EV-004",
+        "category": "supported",
+        "matched": 2,
+        "expected_total": 2,
+        "predicted_total": 2,
+        "verdict_correct": 2,
+        "flag_hits": 0,
+        "flag_expected": 1,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 2,
+        "p0_errors": [],
+        "p1_errors": [
+          "泵压更高所以咖啡更浓：漏标 LOW_SOURCE_QUALITY"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.65",
+          "INSUFFICIENT→INSUFFICIENT sim=1.00"
+        ]
+      },
+      {
+        "case_id": "EV-005",
+        "category": "supported",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 2,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [
+          "小满监护器在隐私上比较放心。"
+        ],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.61"
+        ]
+      },
+      {
+        "case_id": "EV-006",
+        "category": "supported",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 2,
+        "verdict_correct": 0,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 0,
+        "p0_errors": [],
+        "p1_errors": [
+          "洁觅洗地机滚刷支持拆卸水洗：多标 OMITTED_CONDITION",
+          "洁觅洗地机滚刷支持拆卸水洗：复核队列判断不一致（期望 不进）"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [
+          "洁觅洗地机的滚刷可以拆下来直接水冲。"
+        ],
+        "details": [
+          "SUPPORTED→PARTIAL sim=0.36"
+        ]
+      },
+      {
+        "case_id": "EV-007",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 0,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=0.40"
+        ]
+      },
+      {
+        "case_id": "EV-008",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 1,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "墨影 X1 全系列支持无线充电：漏标 SCOPE_MISMATCH"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=0.79"
+        ]
+      },
+      {
+        "case_id": "EV-009",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 0,
+        "flag_expected": 1,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "山见冲锋衣使用的防水膜为独家专利技术：漏标 SCOPE_MISMATCH"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=0.64"
+        ]
+      },
+      {
+        "case_id": "EV-010",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 0,
+        "flag_hits": 0,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "途安记录仪通过国际 XX 安全认证：漏标 SCOPE_MISMATCH，多标 SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→INSUFFICIENT sim=0.81"
+        ]
+      },
+      {
+        "case_id": "EV-011",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.65"
+        ]
+      },
+      {
+        "case_id": "EV-012",
+        "category": "contradicted",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=0.62"
+        ]
+      },
+      {
+        "case_id": "EV-013",
+        "category": "insufficient",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "90% 的用户 4 周内体能明显改善：多标 OMITTED_CONDITION"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.80"
+        ]
+      },
+      {
+        "case_id": "EV-014",
+        "category": "insufficient",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "该护腰枕获得三甲医院康复科推荐：多标 SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.57"
+        ]
+      },
+      {
+        "case_id": "EV-015",
+        "category": "insufficient",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.65"
+        ]
+      },
+      {
+        "case_id": "EV-016",
+        "category": "insufficient",
+        "matched": 2,
+        "expected_total": 2,
+        "predicted_total": 2,
+        "verdict_correct": 0,
+        "flag_hits": 2,
+        "flag_expected": 3,
+        "citation_hits": 0,
+        "citation_predicted": 4,
+        "queue_agreement": 2,
+        "p0_errors": [],
+        "p1_errors": [
+          "该餐具可完全降解：漏标 LOW_SOURCE_QUALITY，多标 OMITTED_CONDITION/SCOPE_MISMATCH",
+          "埋进土里 90 天降解完成：多标 SCOPE_MISMATCH"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→PARTIAL sim=0.57",
+          "INSUFFICIENT→PARTIAL sim=0.48"
+        ]
+      },
+      {
+        "case_id": "EV-017",
+        "category": "insufficient",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "毛球喂食器用户复购率 60%：多标 SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.67"
+        ]
+      },
+      {
+        "case_id": "EV-018",
+        "category": "insufficient",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.43"
+        ]
+      },
+      {
+        "case_id": "EV-019",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=0.81"
+        ]
+      },
+      {
+        "case_id": "EV-020",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 0,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "该产品当前到手价 899 元：多标 SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "CONTRADICTED→INSUFFICIENT sim=0.48"
+        ]
+      },
+      {
+        "case_id": "EV-021",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 2,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "澄野 C5 精华不含酒精：多标 SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [
+          "澄野 C5 精华敏感肌可以放心用"
+        ],
+        "details": [
+          "CONTRADICTED→CONTRADICTED sim=1.00"
+        ]
+      },
+      {
+        "case_id": "EV-022",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 0,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 0,
+        "citation_predicted": 1,
+        "queue_agreement": 1,
+        "p0_errors": [
+          "洁觅洗地机通过 XX 抗菌认证：证据不足却被判为确定结论"
+        ],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→CONTRADICTED sim=0.79"
+        ]
+      },
+      {
+        "case_id": "EV-023",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 0,
+        "flag_hits": 0,
+        "flag_expected": 2,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "暖漾 K2 噪音很低：漏标 SCOPE_MISMATCH/STALE，多标 OMITTED_CONDITION/SOURCE_CONFLICT"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→PARTIAL sim=0.80"
+        ]
+      },
+      {
+        "case_id": "EV-024",
+        "category": "stale",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 2,
+        "citation_hits": 0,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "清风 R3 滤芯寿命为 12 个月：漏标 STALE"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "INSUFFICIENT→INSUFFICIENT sim=0.60"
+        ]
+      },
+      {
+        "case_id": "EV-025",
+        "category": "omitted_condition",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 1,
+        "citation_predicted": 1,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "PARTIAL→PARTIAL sim=1.00"
+        ]
+      },
+      {
+        "case_id": "EV-026",
+        "category": "omitted_condition",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "PARTIAL→PARTIAL sim=0.75"
+        ]
+      },
+      {
+        "case_id": "EV-027",
+        "category": "omitted_condition",
+        "matched": 1,
+        "expected_total": 1,
+        "predicted_total": 1,
+        "verdict_correct": 0,
+        "flag_hits": 2,
+        "flag_expected": 2,
+        "citation_hits": 2,
+        "citation_predicted": 2,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "PARTIAL→INSUFFICIENT sim=0.37"
+        ]
+      },
+      {
+        "case_id": "EV-028",
+        "category": "omitted_condition",
+        "matched": 2,
+        "expected_total": 2,
+        "predicted_total": 2,
+        "verdict_correct": 2,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 3,
+        "citation_predicted": 3,
+        "queue_agreement": 2,
+        "p0_errors": [],
+        "p1_errors": [],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=1.00",
+          "PARTIAL→PARTIAL sim=0.69"
+        ]
+      },
+      {
+        "case_id": "EV-029",
+        "category": "omitted_condition",
+        "matched": 2,
+        "expected_total": 2,
+        "predicted_total": 2,
+        "verdict_correct": 1,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 3,
+        "citation_predicted": 3,
+        "queue_agreement": 1,
+        "p0_errors": [],
+        "p1_errors": [
+          "该精华抗老效果明显：多标 LOW_SOURCE_QUALITY",
+          "该精华抗老效果明显：复核队列判断不一致（期望 进）"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.64",
+          "PARTIAL→INSUFFICIENT sim=0.60"
+        ]
+      },
+      {
+        "case_id": "EV-030",
+        "category": "omitted_condition",
+        "matched": 2,
+        "expected_total": 2,
+        "predicted_total": 2,
+        "verdict_correct": 2,
+        "flag_hits": 1,
+        "flag_expected": 1,
+        "citation_hits": 3,
+        "citation_predicted": 3,
+        "queue_agreement": 2,
+        "p0_errors": [],
+        "p1_errors": [
+          "下雨天可以放心使用：多标 OMITTED_CONDITION"
+        ],
+        "unmatched_expected": [],
+        "unmatched_predicted": [],
+        "details": [
+          "SUPPORTED→SUPPORTED sim=0.65",
+          "PARTIAL→PARTIAL sim=0.30"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "EV-001",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1400,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "澜声 Buds Pro 关闭降噪时综合续航为 40 小时",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页标注关闭降噪综合续航 40 小时，第三方实测为 38.5 小时，在 ±5% 容差范围内（38.5/40=96.25%），两者一致支持该主张。"
+        },
+        {
+          "text": "每天通勤两小时，一周才充一次电",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "claim_type": "other",
+          "reasoning": "该主张涉及个人使用习惯与充电频率，可用资料中无相关证据支持或否定。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1400,
+          "attempts": 1,
+          "prompt_tokens": 650,
+          "completion_tokens": 182,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-002",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1402,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "清风 R3 的颗粒物 CADR 是 600。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页和第三方检测报告均显示颗粒物 CADR 为 600 立方米每小时，与主张一致。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1402,
+          "attempts": 1,
+          "prompt_tokens": 644,
+          "completion_tokens": 86,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-003",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1376,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "云丘 AirBook 14 的重量为 1.19 公斤。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页标注 1.19 千克，用户实测 1.20 千克，在 ±5% 容差范围内一致，支持该数值主张。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1375,
+          "attempts": 1,
+          "prompt_tokens": 623,
+          "completion_tokens": 98,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-004",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1481,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "晨屿胶囊咖啡机是 20Bar 泵压。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页和产品说明书均标注泵压为 20Bar，两个独立来源一致支持该数值。"
+        },
+        {
+          "text": "泵压更高所以咖啡更浓。",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "claim_type": "causal",
+          "reasoning": "可用资料仅涉及泵压数值和同价位产品泵压范围，未提供泵压与咖啡浓度之间因果关系的任何证据，无法支持也无法否定。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1481,
+          "attempts": 1,
+          "prompt_tokens": 650,
+          "completion_tokens": 162,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-005",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1633,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "小满监护器默认只把数据存在本地 SD 卡，不上传云端。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "scope",
+          "reasoning": "S1 官方白皮书明确默认仅本地存储，云备份需手动开启；S2 隐私政策说明未开启云服务时不上传音视频数据，两条证据一致支持默认本地存储、不上传云端。"
+        },
+        {
+          "text": "小满监护器在隐私上比较放心。",
+          "verdict": "INSUFFICIENT",
+          "flags": [],
+          "evidence": [],
+          "claim_type": "other",
+          "reasoning": "该表述属于主观评价，资料仅能证明默认本地存储与不上传云端，无法直接验证“比较放心”这一主观判断。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1632,
+          "attempts": 1,
+          "prompt_tokens": 636,
+          "completion_tokens": 188,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-006",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1938,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "洁觅洗地机的滚刷可以拆下来直接水冲。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "S1官方说明滚刷支持拆卸且可整根水洗，S2用户实测也证实可拆下冲洗，两条证据一致支持该主张。"
+        },
+        {
+          "text": "洁觅洗地机维护很方便。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "资料仅说明滚刷可拆卸水洗这一维护环节，未对整体维护便利性做全面评价，'维护很方便'属于对单一环节的推广性概括，省略了适用范围。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1938,
+          "attempts": 1,
+          "prompt_tokens": 623,
+          "completion_tokens": 190,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-007",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1391,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "墨影 X1 连续看视频能撑 20 小时。",
+          "verdict": "CONTRADICTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页标注视频播放续航 12 小时，第三方实测为 11.5 小时，均远低于 20 小时，且超出 ±5% 容差范围，故主张被有效证据否定。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1391,
+          "attempts": 1,
+          "prompt_tokens": 619,
+          "completion_tokens": 111,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-008",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1317,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "墨影 X1 全系列都支持无线充电。",
+          "verdict": "CONTRADICTED",
+          "flags": [],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "scope",
+          "reasoning": "官方规格对比页明确说明仅 X1 Pro 支持无线充电，X1 与 X1 Lite 不支持，与“全系列都支持”直接矛盾。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1317,
+          "attempts": 1,
+          "prompt_tokens": 593,
+          "completion_tokens": 92,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-009",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1539,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "山见冲锋衣的防水膜是独家专利技术。",
+          "verdict": "CONTRADICTED",
+          "flags": [],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "exclusive",
+          "reasoning": "S1显示该防水膜为对外销售的通用面料并列明多家采购方，S2显示至少四个户外品牌采用同一供应商的该型号面料，均直接否定其独家性。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1539,
+          "attempts": 1,
+          "prompt_tokens": 616,
+          "completion_tokens": 101,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-010",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1219,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "途安记录仪通过了国际 XX 安全认证。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "certification",
+          "reasoning": "S1 商品详情页声称已通过该认证，但 S2 认证机构公开查询页显示详情页标注的证书编号属于另一家公司且认证类别与该产品无关，有效资料互相矛盾，无法判定该主张成立与否。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1219,
+          "attempts": 1,
+          "prompt_tokens": 618,
+          "completion_tokens": 116,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-011",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1183,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "力道 L7 筋膜枪的推力在同价位里最强。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "exclusive",
+          "reasoning": "S1 实测推力 25 牛并称同价位最强，S2 同型号实测推力 18 牛并称同价位中等水平，两份有效资料结论互相矛盾，无法判定该主张成立与否。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1183,
+          "attempts": 1,
+          "prompt_tokens": 618,
+          "completion_tokens": 115,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-012",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1656,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "澄野 C5 精华现在的烟酰胺浓度是 5%。",
+          "verdict": "CONTRADICTED",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1 为 2025-09 官网当前成分表，显示烟酰胺浓度为 3%，与主张的 5% 相反；S2 为 2023 年旧版包装标注 5%，但已过时，不能支持“现在”的浓度。因此主张被当前有效证据否定。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1656,
+          "attempts": 1,
+          "prompt_tokens": 622,
+          "completion_tokens": 134,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-013",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1592,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "岩野蛋白粉 90% 的用户 4 周内体能明显改善。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY",
+            "OMITTED_CONDITION"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "该主张仅由品牌营销页（S1）重复，属于不可溯源的营销来源，不能支撑 SUPPORTED；第三方营养师文章（S2）指出未检索到该品牌公开的临床研究、样本量或评价方法，因此无法验证该数值主张，判 INSUFFICIENT。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1592,
+          "attempts": 1,
+          "prompt_tokens": 626,
+          "completion_tokens": 148,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-014",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1612,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "这款护腰枕是三甲医院康复科推荐的。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "SOURCE_CONFLICT",
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "certification",
+          "reasoning": "S1 为商品详情页的营销性表述（E4，低质量来源），仅称“医院同款，康复科推荐”，不足以支撑“三甲医院康复科推荐”这一具体认证主张；S2 为 E1 等级来源，指出被提及医院官网与公开信息中未检索到该推荐或合作关系。两者方向相反，且 S1 属不可溯源的营销来源，不能判 SUPPORTED，S2 的“未检索到”也不构成反证，故判 INSUFFICIENT 并标 SOURCE_CONFLICT。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1612,
+          "attempts": 1,
+          "prompt_tokens": 611,
+          "completion_tokens": 198,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-015",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1565,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "清风 R3 的净化速度是行业第一。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "exclusive",
+          "reasoning": "S1 仅为品牌宣传物料，属于不可溯源的营销来源，不能支撑 SUPPORTED；S2 指出目前无公开的统一排名，无法验证行业第一的排他性主张，也无法否定，故判 INSUFFICIENT。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1565,
+          "attempts": 1,
+          "prompt_tokens": 611,
+          "completion_tokens": 121,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-016",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 2051,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "这款玉米餐具可以完全降解。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION",
+            "SCOPE_MISMATCH"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "S1 品牌页面称天然可降解，但 S2 行业标准说明可降解需在工业堆肥条件下并出具检测报告，家庭土壤掩埋不适用该结论；主张省略了工业堆肥这一关键条件，且品牌页面为营销来源，证据不足以支持完全降解。"
+        },
+        {
+          "text": "这款玉米餐具埋进土里 90 天就没了。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION",
+            "SCOPE_MISMATCH",
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1 品牌页面称 90 天回归自然，但 S2 指出该结论需工业堆肥条件，家庭土壤掩埋不适用；主张将工业堆肥条件下的 90 天降解等同于埋进土里 90 天消失，省略了关键条件，且来源为品牌营销页面。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 2051,
+          "attempts": 1,
+          "prompt_tokens": 627,
+          "completion_tokens": 278,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-017",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1731,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "毛球喂食器的用户复购率高达 60%。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY",
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1 为品牌直播口播，属于营销性质且不可溯源的来源，不能支撑 SUPPORTED；S2 表明公开渠道未检索到该品牌任何复购率统计或财报披露，无法验证该数值。有效资料之间不构成一致支持，且检索不到不等于反证，故判 INSUFFICIENT。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1731,
+          "attempts": 1,
+          "prompt_tokens": 611,
+          "completion_tokens": 148,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-018",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1986,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "这件冲锋衣和某大牌是同一条产线做出来的。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "S1 仅为店铺客服回复，属于营销性、不可独立溯源的来源，不能支撑 SUPPORTED；S2 表示公开资料未检索到相关合作披露，但检索不到不等于反证，因此无法支持也无法否定该主张。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1986,
+          "attempts": 1,
+          "prompt_tokens": 609,
+          "completion_tokens": 123,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-019",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1587,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "墨影 X1 支持把相册直接备份到电脑。",
+          "verdict": "CONTRADICTED",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "scope",
+          "reasoning": "S1（2022-11）曾支持该功能，但 S2（2025-06）最新固件说明该功能已移除，因此当前主张与最新有效证据相反。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1587,
+          "attempts": 1,
+          "prompt_tokens": 616,
+          "completion_tokens": 106,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-020",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1564,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "这款现在到手价 899 元。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "STALE",
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1（2024-11）显示到手价 899 元，但 S2（2025-09）显示官方商城当前价格为 1299 元。S1 已过期，且与较新的 S2 存在价格冲突，无法确认当前到手价是否为 899 元。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1564,
+          "attempts": 1,
+          "prompt_tokens": 603,
+          "completion_tokens": 131,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-021",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1628,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "澄野 C5 精华不含酒精",
+          "verdict": "CONTRADICTED",
+          "flags": [
+            "SOURCE_CONFLICT",
+            "STALE"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1（2023-05 旧版包装）显示不含乙醇或变性乙醇，但 S2（2025-09 官网当前成分表）显示含变性乙醇。当前有效证据与主张相反，且两份资料存在冲突，旧资料已过时。"
+        },
+        {
+          "text": "澄野 C5 精华敏感肌可以放心用",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "health_safety",
+          "reasoning": "资料仅涉及是否含酒精，未提供任何关于敏感肌安全性或适用性的证据，无法支持或否定该主张。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1628,
+          "attempts": 1,
+          "prompt_tokens": 609,
+          "completion_tokens": 211,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-022",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1233,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "洁觅洗地机通过了 XX 抗菌认证。",
+          "verdict": "CONTRADICTED",
+          "flags": [
+            "STALE"
+          ],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "certification",
+          "reasoning": "S1 显示该证书有效期至 2024 年 12 月，状态为已过期，且未查询到新证书，与主张的『通过了认证』相反。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1233,
+          "attempts": 1,
+          "prompt_tokens": 596,
+          "completion_tokens": 99,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-023",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1729,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "多篇评测都说暖漾 K2 噪音很低。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION",
+            "SOURCE_CONFLICT"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "S1 实测 32 分贝支持噪音低，但 S2 指出该产品已于 2024 年换代且新款实测 41 分贝，说明原主张未限定型号/代际，且不同资料存在冲突。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1729,
+          "attempts": 1,
+          "prompt_tokens": 639,
+          "completion_tokens": 123,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-024",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1216,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "清风 R3 的滤芯寿命是 12 个月。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "SCOPE_MISMATCH"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1 仅说明清风 R2 的滤芯建议 12 个月更换，属于不同型号，不能直接支持 R3；S2 显示 R3 说明书未标注滤芯寿命，仅提示按指示灯更换。因此无法支持或否定该主张。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1216,
+          "attempts": 1,
+          "prompt_tokens": 619,
+          "completion_tokens": 128,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-025",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1514,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "澜声 Buds Pro 续航 40 小时。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION"
+          ],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方规格页显示关闭降噪时综合续航为 40 小时，但开启降噪时为 28 小时。原主张省略了“关闭降噪”这一限定条件，会改变对续航能力的理解，因此判为 PARTIAL。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1514,
+          "attempts": 1,
+          "prompt_tokens": 593,
+          "completion_tokens": 113,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-026",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1463,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "墨影 X1 充电 10 分钟能用 5 小时。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "官方说明（S1）支持在搭配原装 80W 充电器、熄屏待机条件下充电 10 分钟可支持约 5 小时使用，但原主张省略了充电器功率和熄屏待机等关键限定条件；用户实测（S2）使用 18W 充电器时仅约 1.5 小时，说明该数值高度依赖条件，故判 PARTIAL。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1463,
+          "attempts": 1,
+          "prompt_tokens": 644,
+          "completion_tokens": 159,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-027",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1708,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "跟着这个训练计划 7 天能瘦 5 斤",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "OMITTED_CONDITION",
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "S1 指出该计划需同时执行每日 1200 千卡饮食控制，训练仅为辅助手段，因此“7 天瘦 5 斤”的效果无法单独归因于训练计划；S2 的案例样本仅 8 人、无对照组且未记录饮食依从性，证据质量低，无法有效支持或否定该数值主张。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1707,
+          "attempts": 1,
+          "prompt_tokens": 623,
+          "completion_tokens": 158,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-028",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1253,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "清风 R3 的 CADR 达 600。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "numeric",
+          "reasoning": "第三方检测报告显示最高档 CADR 为 600 立方米每小时，与主张数值一致。"
+        },
+        {
+          "text": "清风 R3 非常安静。",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "other",
+          "reasoning": "睡眠档噪音 28 分贝确实安静，但最高档噪音 68 分贝并不安静；主张未说明档位，省略了会改变理解的条件。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1253,
+          "attempts": 1,
+          "prompt_tokens": 631,
+          "completion_tokens": 167,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-029",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 2179,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "这支精华含 A 醇（视黄醇）。",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "other",
+          "reasoning": "S1 官网成分表明确列出视黄醇（A 醇），直接支持该产品含 A 醇。"
+        },
+        {
+          "text": "这支精华的抗老效果明显。",
+          "verdict": "INSUFFICIENT",
+          "flags": [
+            "OMITTED_CONDITION",
+            "LOW_SOURCE_QUALITY"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "causal",
+          "reasoning": "S1 仅显示视黄醇添加量为 0.02%，S2 指出视黄醇起效浓度通常不低于 0.1%，低浓度产品的抗老效果需临床验证；现有资料未提供该产品抗老效果的临床证据，无法支持或否定“效果明显”。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 2179,
+          "attempts": 1,
+          "prompt_tokens": 628,
+          "completion_tokens": 210,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "case_id": "EV-030",
+      "error": null,
+      "parse_error": null,
+      "format_violation": null,
+      "duration_ms": 1671,
+      "raw_output_tail": null,
+      "predicted_claims": [
+        {
+          "text": "途安记录仪是 IPX5 防水",
+          "verdict": "SUPPORTED",
+          "flags": [],
+          "evidence": [
+            "S1"
+          ],
+          "claim_type": "certification",
+          "reasoning": "S1 官方说明确认 IPX5 指接口保护盖闭合状态下可承受喷水，支持该产品具备 IPX5 防水等级。"
+        },
+        {
+          "text": "途安记录仪下雨天也能放心用",
+          "verdict": "PARTIAL",
+          "flags": [
+            "OMITTED_CONDITION",
+            "SCOPE_MISMATCH"
+          ],
+          "evidence": [
+            "S1",
+            "S2"
+          ],
+          "claim_type": "scope",
+          "reasoning": "S1 表明 IPX5 仅限接口保护盖闭合状态下承受喷水，不包含整机浸泡；S2 说明进水损坏不保修。原主张省略了保护盖须闭合等条件，且“放心用”范围被夸大。"
+        }
+      ],
+      "calls": [
+        {
+          "step": "judge_all",
+          "model_id": "deepseek-flash",
+          "latency_ms": 1671,
+          "attempts": 1,
+          "prompt_tokens": 622,
+          "completion_tokens": 206,
+          "finish_reason": "stop",
+          "raw_body": null,
+          "error": null,
+          "error_code": null
+        }
+      ]
+    }
+  ]
+}

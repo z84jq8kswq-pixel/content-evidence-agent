@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>内容风险研判工作台 · 内容证据核查 Agent</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/workbench.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">内容风险研判工作台</span>
+      <span class="brand-sub">内容证据核查 Agent</span>
+    </div>
+    <nav class="mode-switch" aria-label="工作台入口">
+      <a class="mode active" href="/workbench">内容研判</a>
+      <a class="mode" href="/agent">待复核队列</a>
+      <a class="mode" href="/">评测与版本</a>
+      <a class="mode" href="/tools">工具与语料</a>
+    </nav>
+    <div class="topbar-controls">
+      <span id="env-status" class="env-status" hidden></span>
+    </div>
+  </header>
+
+  <main class="wf-main">
+    <div class="wf-layout">
+      <!-- 左：历史研判 -->
+      <aside class="wf-col wf-col-history">
+        <div class="wf-col-head">
+          <h2>最近研判</h2>
+          <button id="refresh-history" class="link-btn" type="button">刷新</button>
+        </div>
+        <p class="wf-hint">来自 <code>runs/</code> 下真实产生的内容研判产物，不是示例数据。</p>
+        <div id="history-list" class="wf-history"></div>
+      </aside>
+
+      <!-- 中：输入 + 结果 -->
+      <section class="wf-col wf-col-main">
+        <section class="wf-panel" id="input-panel">
+          <div class="wf-panel-head">
+            <h1>提交待研判内容</h1>
+            <p class="wf-panel-note">
+              粘贴一条消费决策类内容（笔记、种草、测评、营销文案）。系统会拆出其中的事实性主张，
+              逐条检索资料、判断证据是否足以支撑结论，并给出处置建议。
+              <strong>它不会替运营做最终处置决策。</strong>
+            </p>
+          </div>
+
+          <label class="wf-label" for="content-input">待核查内容</label>
+          <textarea id="content-input" class="wf-textarea" rows="7"
+            placeholder="例如：这款净水器通量 1200G，滤芯寿命 3 年，废水比 1:1，还通过了 NSF 认证。"></textarea>
+
+          <div class="wf-input-foot">
+            <div class="wf-input-meta">
+              <span id="char-count" class="wf-count">0 / 4000 字</span>
+              <span id="input-warn" class="wf-warn-text" hidden></span>
+            </div>
+            <div class="wf-input-actions">
+              <button id="clear-btn" class="btn-ghost" type="button">清空</button>
+              <button id="run-btn" class="btn-primary" type="button">开始研判</button>
+            </div>
+          </div>
+
+          <div class="wf-samples">
+            <span class="wf-samples-label">演示样例（来自项目内真实任务集）：</span>
+            <span id="sample-buttons" class="wf-sample-buttons"></span>
+          </div>
+        </section>
+
+        <!-- 运行中 / 失败 / 空态 -->
+        <section id="run-status" class="wf-panel wf-status" hidden></section>
+        <section id="result-root" class="wf-result"></section>
+
+        <!-- 联网参考材料（影子模式）：只作人工参考，不参与自动研判 -->
+        <section id="web-panel" class="wf-panel wf-web" hidden>
+          <div class="wf-panel-head">
+            <h2>联网参考材料</h2>
+            <p class="wf-panel-note" id="web-note"></p>
+          </div>
+          <p class="wf-web-warning" id="web-warning"></p>
+
+          <div class="wf-web-form">
+            <input id="web-url" class="wf-web-input" type="url"
+              placeholder="https://example.com/某产品的规格页" autocomplete="off">
+            <button id="web-fetch" class="btn-ghost" type="button">取回网页</button>
+            <span class="wf-web-or">或</span>
+            <input id="web-query" class="wf-web-input" type="text"
+              placeholder="查询词（需要搜索 API 密钥）" autocomplete="off">
+            <button id="web-search" class="btn-ghost" type="button">搜索并取回</button>
+          </div>
+          <p class="wf-web-hint" id="web-hint"></p>
+
+          <div id="web-status"></div>
+          <div id="web-list" class="wf-web-list"></div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/static/workbench.js"></script>
+</body>
+</html>

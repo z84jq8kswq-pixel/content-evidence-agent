@@ -1,0 +1,468 @@
+{
+  "schema_version": "0.1",
+  "model_under_test": "deepseek-flash",
+  "categories": {
+    "supported": "证据支持：资料能直接支持主张，检验引用定位与证据等级使用",
+    "contradicted": "信息冲突：资料与主张相反，或资料之间存在矛盾",
+    "insufficient": "证据不足：缺乏可核验资料，检验系统能否承认判断不了",
+    "stale": "资料过期：资料存在但时效或版本不符",
+    "omitted_condition": "限定条件被省略：数据真实但条件缺失，检验部分支持判定"
+  },
+  "cases": [
+    {
+      "id": "EV-001",
+      "category": "supported",
+      "difficulty": "easy",
+      "content": "入手了澜声 Buds Pro，关闭降噪时综合续航 40 小时是真的，每天通勤两小时，一周才充一次电。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-08", "text": "澜声官方规格页：配合充电盒综合续航 40 小时，开启主动降噪时为 28 小时。"},
+        {"id": "S2", "tier": "E2", "date": "2025-09", "text": "第三方实验室实测：50% 音量、关闭降噪，综合续航 38.5 小时。"}
+      ],
+      "expected_claims": [
+        {"text": "澜声 Buds Pro 综合续航 40 小时", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "官方与第三方一致，38.5 在 5% 容差内"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "数值容差；内容已写明条件时，不把降噪开启的 28 小时误判为冲突"
+    },
+    {
+      "id": "EV-002",
+      "category": "supported",
+      "difficulty": "easy",
+      "content": "清风 R3 的颗粒物 CADR 是 600。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-06", "text": "清风官方规格页：颗粒物 CADR 600 立方米每小时。"},
+        {"id": "S2", "tier": "E2", "date": "2025-07", "text": "第三方检测报告：颗粒物 CADR 实测 600 立方米每小时。"},
+        {"id": "S3", "tier": "E2", "date": "2025-07", "text": "同一份检测报告：最高档噪音 68 分贝。"}
+      ],
+      "expected_claims": [
+        {"text": "清风 R3 的颗粒物 CADR 为 600", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "两个独立来源一致"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "多源一致时的支持判定；忽略与主张无关的噪音信息"
+    },
+    {
+      "id": "EV-003",
+      "category": "supported",
+      "difficulty": "easy",
+      "content": "云丘 AirBook 14 只有 1.19 公斤，背去图书馆完全没负担。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-05", "text": "云丘官方规格页：整机重量 1.19 千克。"},
+        {"id": "S2", "tier": "E3", "date": "2025-06", "text": "用户开箱实测：电子秤读数 1.20 千克。"}
+      ],
+      "expected_claims": [
+        {"text": "云丘 AirBook 14 重量约 1.19 千克", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "误差 0.8%，在容差内；报告应标注证据强度为一手来源支持"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "低等级来源与官方一致时如何标注证据强度"
+    },
+    {
+      "id": "EV-004",
+      "category": "supported",
+      "difficulty": "medium",
+      "content": "晨屿胶囊咖啡机是 20Bar 泵压，泵压更高所以咖啡更浓。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-04", "text": "晨屿官方规格页：泵压 20Bar。"},
+        {"id": "S2", "tier": "E1", "date": "2025-04", "text": "产品说明书 PDF：水泵额定压力 20Bar。"},
+        {"id": "S3", "tier": "E3", "date": "2025-08", "text": "论坛整理：同价位胶囊机泵压多在 15Bar 至 19Bar 之间。"}
+      ],
+      "expected_claims": [
+        {"text": "晨屿胶囊咖啡机泵压为 20Bar", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "说明书与规格页一致"},
+        {"text": "泵压更高所以咖啡更浓", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": false, "note": "浓度取决于粉量、水量、萃取时间，资料未提供任何浓度对比"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "拆出事实部分与因果部分；检验是否会把相关关系当成因果"
+    },
+    {
+      "id": "EV-005",
+      "category": "supported",
+      "difficulty": "medium",
+      "content": "小满监护器默认只把数据存在本地 SD 卡，不上传云端，隐私上比较放心。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-06", "text": "小满官方技术白皮书：默认仅本地存储，云备份功能需用户手动开启并绑定账号。"},
+        {"id": "S2", "tier": "E1", "date": "2025-06", "text": "产品隐私政策：未开启云服务时，设备端不向服务器上传音视频数据。"}
+      ],
+      "expected_claims": [
+        {"text": "小满监护器默认不上传云端，数据存于本地", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "两份一手来源一致"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "健康安全类主张的谨慎判定；识别默认行为与可选行为的区别"
+    },
+    {
+      "id": "EV-006",
+      "category": "supported",
+      "difficulty": "medium",
+      "content": "洁觅洗地机的滚刷可以拆下来直接水冲，维护很方便。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-03", "text": "洁觅官方说明：滚刷支持拆卸，可整根水洗后晾干。"},
+        {"id": "S2", "tier": "E3", "date": "2025-05", "text": "用户实测图文：三步拆下滚刷，冲洗后晾干装回。"}
+      ],
+      "expected_claims": [
+        {"text": "洁觅洗地机滚刷支持拆卸水洗", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": false, "note": "官方说明与用户实测一致"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "高低等级证据混合时的判定与证据强度标注"
+    },
+    {
+      "id": "EV-007",
+      "category": "contradicted",
+      "difficulty": "easy",
+      "content": "墨影 X1 连续看视频能撑 20 小时。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-07", "text": "墨影官方规格页：视频播放续航 12 小时。"},
+        {"id": "S2", "tier": "E2", "date": "2025-08", "text": "第三方实验室实测：50% 亮度、飞行模式下视频播放 11.5 小时。"}
+      ],
+      "expected_claims": [
+        {"text": "墨影 X1 视频播放续航约 20 小时", "verdict": "CONTRADICTED", "flags": [], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "相差 67%，远超容差，两个独立来源一致否定"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "数量级差异的冲突判定"
+    },
+    {
+      "id": "EV-008",
+      "category": "contradicted",
+      "difficulty": "easy",
+      "content": "墨影 X1 全系列都支持无线充电。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-07", "text": "墨影官方规格对比页：仅 X1 Pro 支持无线充电，X1 与 X1 Lite 不支持。"}
+      ],
+      "expected_claims": [
+        {"text": "墨影 X1 全系列支持无线充电", "verdict": "CONTRADICTED", "flags": ["SCOPE_MISMATCH"], "evidence": ["S1"], "in_review_queue": true, "note": "范围型主张，只要有型号不支持即判冲突"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "范围型主张按最窄范围判定"
+    },
+    {
+      "id": "EV-009",
+      "category": "contradicted",
+      "difficulty": "medium",
+      "content": "山见冲锋衣的防水膜是独家专利技术。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-02", "text": "材料供应商官网：该防水膜为对外销售的通用面料，列明多家采购方。"},
+        {"id": "S2", "tier": "E2", "date": "2025-04", "text": "行业媒体报道：至少四个户外品牌采用同一供应商的该型号面料。"}
+      ],
+      "expected_claims": [
+        {"text": "山见冲锋衣使用的防水膜为独家专利技术", "verdict": "CONTRADICTED", "flags": ["SCOPE_MISMATCH"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "排他型主张，供应商公开信息直接否定独占性"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "唯一、独家、第一类排他主张的核查方式"
+    },
+    {
+      "id": "EV-010",
+      "category": "contradicted",
+      "difficulty": "medium",
+      "content": "途安记录仪通过了国际 XX 安全认证。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-01", "text": "商品详情页：产品已通过国际 XX 安全认证。"},
+        {"id": "S2", "tier": "E1", "date": "2025-09", "text": "认证机构公开查询页：详情页所标注的证书编号属于另一家公司，且认证类别与该产品无关。"}
+      ],
+      "expected_claims": [
+        {"text": "途安记录仪通过国际 XX 安全认证", "verdict": "CONTRADICTED", "flags": ["SCOPE_MISMATCH"], "evidence": ["S2"], "in_review_queue": true, "note": "需以认证机构登记信息为准，营销页自述不构成证据"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "认证型主张必须查一手登记信息；E4 不能支撑结论"
+    },
+    {
+      "id": "EV-011",
+      "category": "contradicted",
+      "difficulty": "hard",
+      "content": "力道 L7 筋膜枪的推力在同价位里最强。",
+      "sources": [
+        {"id": "S1", "tier": "E3", "date": "2025-05", "text": "测评 A：实测推力 25 牛，结论为同价位最强。"},
+        {"id": "S2", "tier": "E3", "date": "2025-08", "text": "测评 B：同型号实测推力 18 牛，结论为同价位中等水平。"}
+      ],
+      "expected_claims": [
+        {"text": "力道 L7 推力在同价位最强", "verdict": "INSUFFICIENT", "flags": ["SOURCE_CONFLICT"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "两份同等证据等级的来源结论相反，不能直接采信任一方"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "资料互相矛盾时应标冲突待复核，而不是直接下结论"
+    },
+    {
+      "id": "EV-012",
+      "category": "contradicted",
+      "difficulty": "hard",
+      "content": "澄野 C5 精华现在的烟酰胺浓度还是 5%。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-09", "text": "澄野官网当前成分表：烟酰胺浓度 3%。"},
+        {"id": "S2", "tier": "E3", "date": "2023-06", "text": "用户提供的旧版包装照片：标注烟酰胺 5%，生产日期 2023 年 4 月。"}
+      ],
+      "expected_claims": [
+        {"text": "澄野 C5 精华烟酰胺浓度为 5%", "verdict": "CONTRADICTED", "flags": ["STALE"], "evidence": ["S1"], "in_review_queue": true, "note": "官网当前成分表为 3%，5% 来自 2023 年旧版包装，属于把过期数据当作当前数据"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "版本冲突的归因：识别旧版数据被当作当前数据使用"
+    },
+    {
+      "id": "EV-013",
+      "category": "insufficient",
+      "difficulty": "easy",
+      "content": "岩野蛋白粉 90% 的用户 4 周内体能明显改善。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-05", "text": "品牌营销页：90% 用户 4 周内体能明显改善。"},
+        {"id": "S2", "tier": "E2", "date": "2025-07", "text": "第三方营养师文章：未检索到该品牌公开的临床研究、样本量或评价方法。"}
+      ],
+      "expected_claims": [
+        {"text": "90% 的用户 4 周内体能明显改善", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": true, "note": "仅营销来源，无样本量与评价标准；检索无结果不等于反证"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "健康类主张必须要求可核验研究；E4 不能单独作证"
+    },
+    {
+      "id": "EV-014",
+      "category": "insufficient",
+      "difficulty": "easy",
+      "content": "这款护腰枕是三甲医院康复科推荐的。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-06", "text": "商品详情页：医院同款，康复科推荐。"},
+        {"id": "S2", "tier": "E1", "date": "2025-09", "text": "被提及医院官网与公开信息中未检索到对该产品的推荐或合作关系说明。"}
+      ],
+      "expected_claims": [
+        {"text": "该护腰枕获得三甲医院康复科推荐", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": true, "note": "无任何机构背书证据；机构未公开声明不能证明其推荐，也不能直接判为造假"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "机构背书类主张；检索无结果只能得到证据不足"
+    },
+    {
+      "id": "EV-015",
+      "category": "insufficient",
+      "difficulty": "medium",
+      "content": "清风 R3 的净化速度是行业第一。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-06", "text": "品牌宣传物料：行业领先净化速度。"},
+        {"id": "S2", "tier": "E2", "date": "2025-07", "text": "行业标准说明：颗粒物净化能力需在统一测试条件下对比，目前无公开的统一排名。"}
+      ],
+      "expected_claims": [
+        {"text": "清风 R3 净化速度行业第一", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": true, "note": "缺少统一测试标准与横向对比数据，排他型主张无法判定"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "排他型主张缺少比较基础时的处理"
+    },
+    {
+      "id": "EV-016",
+      "category": "insufficient",
+      "difficulty": "medium",
+      "content": "这款玉米餐具可以完全降解，埋进土里 90 天就没了。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-04", "text": "品牌页面：天然可降解，90 天回归自然。"},
+        {"id": "S2", "tier": "E2", "date": "2025-03", "text": "行业标准说明：可降解需在工业堆肥条件下并出具检测报告，家庭土壤掩埋不适用该结论。"}
+      ],
+      "expected_claims": [
+        {"text": "该餐具可完全降解", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": true, "note": "仅品牌自述，无第三方降解检测报告"},
+        {"text": "埋进土里 90 天降解完成", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY", "OMITTED_CONDITION"], "evidence": [], "in_review_queue": true, "note": "90 天降解需在工业堆肥条件下并出具检测报告，家庭土壤掩埋不适用"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "环保类主张；营销词与标准定义之间的差距"
+    },
+    {
+      "id": "EV-017",
+      "category": "insufficient",
+      "difficulty": "medium",
+      "content": "毛球喂食器的用户复购率高达 60%。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-08", "text": "品牌直播口播：用户复购率达到 60%。"},
+        {"id": "S2", "tier": "E2", "date": "2025-09", "text": "公开渠道未检索到该品牌任何复购率统计或财报披露。"}
+      ],
+      "expected_claims": [
+        {"text": "毛球喂食器用户复购率 60%", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": true, "note": "企业内部数据无可核验来源，属不可验证主张"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "不可验证的内部经营数据如何处理"
+    },
+    {
+      "id": "EV-018",
+      "category": "insufficient",
+      "difficulty": "medium",
+      "content": "这件冲锋衣和某大牌是同一条产线做出来的。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2025-05", "text": "店铺客服回复：与大牌同源工厂生产。"},
+        {"id": "S2", "tier": "E2", "date": "2025-06", "text": "公开资料中未检索到该品牌与该代工厂的合作披露。"}
+      ],
+      "expected_claims": [
+        {"text": "该冲锋衣与大牌共用同一条产线", "verdict": "INSUFFICIENT", "flags": ["LOW_SOURCE_QUALITY"], "evidence": [], "in_review_queue": false, "note": "供应链关系未公开，客服口述不构成证据；不影响购买决策核心判断时可不进复核队列"}
+      ],
+      "requires_human": false,
+      "what_it_tests": "不可验证的供应链主张；复核队列规则的边界"
+    },
+    {
+      "id": "EV-019",
+      "category": "stale",
+      "difficulty": "medium",
+      "content": "墨影 X1 支持把相册直接备份到电脑。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2022-11", "text": "历史固件更新说明：新增相册直连电脑备份功能。"},
+        {"id": "S2", "tier": "E1", "date": "2025-06", "text": "最新固件更新说明：该备份功能已移除，建议使用云同步。"}
+      ],
+      "expected_claims": [
+        {"text": "墨影 X1 支持相册直接备份到电脑", "verdict": "CONTRADICTED", "flags": ["STALE"], "evidence": ["S2"], "in_review_queue": true, "note": "存在当前版本一手证据直接否定，因此判冲突而非证据不足；旧固件说明只是解释了来源"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "有现版本反证时，过期资料不改变冲突判定"
+    },
+    {
+      "id": "EV-020",
+      "category": "stale",
+      "difficulty": "easy",
+      "content": "这款现在到手价 899 元，很划算。",
+      "sources": [
+        {"id": "S1", "tier": "E4", "date": "2024-11", "text": "促销页面截图：到手价 899 元。"},
+        {"id": "S2", "tier": "E1", "date": "2025-09", "text": "官方商城当前价格：1299 元。"}
+      ],
+      "expected_claims": [
+        {"text": "该产品当前到手价 899 元", "verdict": "CONTRADICTED", "flags": ["STALE"], "evidence": ["S2"], "in_review_queue": true, "note": "价格时效为 7 天，旧促销价不能代表当前价格"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "价格类主张的时效规则"
+    },
+    {
+      "id": "EV-021",
+      "category": "stale",
+      "difficulty": "medium",
+      "content": "澄野 C5 精华不含酒精，敏感肌可以放心用。",
+      "sources": [
+        {"id": "S1", "tier": "E3", "date": "2023-05", "text": "用户拍摄的旧版包装成分表：不含乙醇或变性乙醇。"},
+        {"id": "S2", "tier": "E1", "date": "2025-09", "text": "官网当前成分表：含变性乙醇。"}
+      ],
+      "expected_claims": [
+        {"text": "澄野 C5 精华不含酒精", "verdict": "CONTRADICTED", "flags": ["STALE"], "evidence": ["S2"], "in_review_queue": true, "note": "当前版本成分表直接否定"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "配方换代导致的时效冲突"
+    },
+    {
+      "id": "EV-022",
+      "category": "stale",
+      "difficulty": "medium",
+      "content": "洁觅洗地机通过了 XX 抗菌认证。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-09", "text": "认证机构查询页：该证书有效期至 2024 年 12 月，状态为已过期，未查询到新证书。"}
+      ],
+      "expected_claims": [
+        {"text": "洁觅洗地机通过 XX 抗菌认证", "verdict": "INSUFFICIENT", "flags": ["STALE"], "evidence": [], "in_review_queue": true, "note": "证书过期后不能作为支持证据，但也没有证据表明其造假"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "过期不等于伪造；过期资料不能支撑肯定结论"
+    },
+    {
+      "id": "EV-023",
+      "category": "stale",
+      "difficulty": "hard",
+      "content": "多篇评测都说暖漾 K2 噪音很低。",
+      "sources": [
+        {"id": "S1", "tier": "E3", "date": "2023-09", "text": "测评文章：实测运行噪音 32 分贝。"},
+        {"id": "S2", "tier": "E3", "date": "2024-11", "text": "测评文章：该产品已于 2024 年换代，新款实测噪音 41 分贝。"},
+        {"id": "S3", "tier": "E1", "date": "2025-08", "text": "官方规格页未标注噪音数据。"}
+      ],
+      "expected_claims": [
+        {"text": "暖漾 K2 噪音很低", "verdict": "INSUFFICIENT", "flags": ["STALE", "SCOPE_MISMATCH"], "evidence": [], "in_review_queue": true, "note": "两份测评针对不同代次，老款数据不能沿用；官方无当前噪音数据"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "换代产品的评测数据不能直接沿用"
+    },
+    {
+      "id": "EV-024",
+      "category": "stale",
+      "difficulty": "medium",
+      "content": "清风 R3 的滤芯寿命是 12 个月。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2021-10", "text": "清风 R2 说明书：滤芯建议 12 个月更换一次。"},
+        {"id": "S2", "tier": "E1", "date": "2025-06", "text": "清风 R3 说明书未标注滤芯寿命，仅提示按滤芯指示灯更换。"}
+      ],
+      "expected_claims": [
+        {"text": "清风 R3 滤芯寿命为 12 个月", "verdict": "INSUFFICIENT", "flags": ["STALE", "SCOPE_MISMATCH"], "evidence": [], "in_review_queue": true, "note": "R2 的数据不能直接套用到 R3，且 R3 官方未标注"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "型号错配与数据沿用"
+    },
+    {
+      "id": "EV-025",
+      "category": "omitted_condition",
+      "difficulty": "easy",
+      "content": "澜声 Buds Pro 续航 40 小时。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-08", "text": "澜声官方规格页：关闭降噪时综合续航 40 小时，开启降噪时 28 小时。"}
+      ],
+      "expected_claims": [
+        {"text": "澜声 Buds Pro 续航 40 小时", "verdict": "PARTIAL", "flags": ["OMITTED_CONDITION"], "evidence": ["S1"], "in_review_queue": true, "note": "数据真实，但省略了关闭降噪这一条件，日常开启降噪时差距明显"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "真实数据加条件省略的判定，与完全造假的区别"
+    },
+    {
+      "id": "EV-026",
+      "category": "omitted_condition",
+      "difficulty": "medium",
+      "content": "墨影 X1 充电 10 分钟能用 5 小时。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-07", "text": "官方说明：搭配原装 80W 充电器、熄屏待机条件下，充电 10 分钟可支持约 5 小时使用。"},
+        {"id": "S2", "tier": "E3", "date": "2025-08", "text": "用户实测：使用 18W 充电器，充电 10 分钟后可用约 1.5 小时。"}
+      ],
+      "expected_claims": [
+        {"text": "墨影 X1 充电 10 分钟可用 5 小时", "verdict": "PARTIAL", "flags": ["OMITTED_CONDITION"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "原装充电器与熄屏条件是关键前提，普通充电器下不成立"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "条件依赖型数据；替代条件实测如何作为补充证据"
+    },
+    {
+      "id": "EV-027",
+      "category": "omitted_condition",
+      "difficulty": "hard",
+      "content": "跟着这个训练计划 7 天瘦 5 斤。",
+      "sources": [
+        {"id": "S1", "tier": "E2", "date": "2025-06", "text": "计划文档注明：需同时执行每日 1200 千卡饮食控制，训练为辅助手段。"},
+        {"id": "S2", "tier": "E3", "date": "2025-06", "text": "案例样本 8 人，无对照组，未记录饮食依从性。"}
+      ],
+      "expected_claims": [
+        {"text": "执行该训练计划 7 天可减重 5 斤", "verdict": "PARTIAL", "flags": ["OMITTED_CONDITION", "LOW_SOURCE_QUALITY"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "效果无法单独归因于训练，且样本小无对照"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "健康类效果主张的归因；小样本与无对照组的证据强度"
+    },
+    {
+      "id": "EV-028",
+      "category": "omitted_condition",
+      "difficulty": "hard",
+      "content": "清风 R3 的 CADR 达 600，而且非常安静。",
+      "sources": [
+        {"id": "S1", "tier": "E2", "date": "2025-07", "text": "第三方检测报告：最高档 CADR 600 立方米每小时，同档噪音 68 分贝。"},
+        {"id": "S2", "tier": "E2", "date": "2025-07", "text": "同一份报告：睡眠档噪音 28 分贝，对应 CADR 120 立方米每小时。"}
+      ],
+      "expected_claims": [
+        {"text": "清风 R3 的 CADR 达 600", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1"], "in_review_queue": false, "note": "数值本身有检测报告支持"},
+        {"text": "清风 R3 运行非常安静", "verdict": "PARTIAL", "flags": ["OMITTED_CONDITION"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "安静只在睡眠档成立，此时 CADR 降至 120，两个指标不能同时取最优"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "同一份报告内部的条件对应关系；两个指标不能在报告中拼接"
+    },
+    {
+      "id": "EV-029",
+      "category": "omitted_condition",
+      "difficulty": "medium",
+      "content": "这支精华含 A 醇，抗老效果明显。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-09", "text": "官网成分表：视黄醇（A 醇）添加量 0.02%。"},
+        {"id": "S2", "tier": "E2", "date": "2024-12", "text": "皮肤科综述：视黄醇起效浓度通常不低于 0.1%，低浓度产品的抗老效果需临床验证。"}
+      ],
+      "expected_claims": [
+        {"text": "该精华含 A 醇", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1"], "in_review_queue": false, "note": "成分表可直接支持"},
+        {"text": "该精华抗老效果明显", "verdict": "PARTIAL", "flags": ["OMITTED_CONDITION"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "含该成分不等于达到起效浓度"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "成分存在与功效成立之间的差距"
+    },
+    {
+      "id": "EV-030",
+      "category": "omitted_condition",
+      "difficulty": "medium",
+      "content": "途安记录仪是 IPX5 防水，下雨天也能放心用。",
+      "sources": [
+        {"id": "S1", "tier": "E1", "date": "2025-03", "text": "官方说明：IPX5 指接口保护盖闭合状态下可承受喷水，不包含整机浸泡。"},
+        {"id": "S2", "tier": "E1", "date": "2025-03", "text": "售后条款：产品进水造成的损坏不在保修范围内。"}
+      ],
+      "expected_claims": [
+        {"text": "途安记录仪具备 IPX5 防水能力", "verdict": "SUPPORTED", "flags": [], "evidence": ["S1"], "in_review_queue": false, "note": "IPX5 是产品标注的防水等级，等级本身属实；接口盖闭合属于该等级的定义，不算被省略的条件"},
+        {"text": "下雨天可以放心使用", "verdict": "PARTIAL", "flags": ["SCOPE_MISMATCH"], "evidence": ["S1", "S2"], "in_review_queue": true, "note": "IPX5 只覆盖接口盖闭合防喷水，把等级外推到雨天整机使用属于范围外推，且进水不保修"}
+      ],
+      "requires_human": true,
+      "what_it_tests": "认证等级与使用场景的对应关系；范围被外推时的判定"
+    }
+  ]
+}

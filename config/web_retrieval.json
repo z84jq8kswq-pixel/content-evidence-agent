@@ -1,0 +1,19 @@
+{
+  "_note": "联网影子模式的配置。默认不启用搜索 API：URL 获取模式不需要任何密钥即可用；发现模式的密钥一律从环境变量读，不写进版本库。",
+  "enabled": true,
+  "user_agent": "ContentEvidenceAgent/0.3 (+offline shadow retrieval; contact: project owner)",
+  "timeout_s": 8.0,
+  "max_redirects": 3,
+  "max_bytes": 524288,
+  "max_text_chars": 6000,
+  "search": {
+    "provider": "brave",
+    "api_key_env": "BRAVE_SEARCH_API_KEY",
+    "endpoint": "https://api.search.brave.com/res/v1/web/search",
+    "max_results": 5,
+    "timeout_s": 8.0
+  },
+  "allow_hosts": [],
+  "deny_hosts": [],
+  "snapshot_dir": "snapshots/web"
+}

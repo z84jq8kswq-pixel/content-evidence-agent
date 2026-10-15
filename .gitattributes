@@ -1,0 +1,20 @@
+# 统一换行符：Windows 上编辑、Linux/macOS 上克隆都不会产生无意义的整文件 diff。
+# 文本文件在仓库里一律存 LF；检出到工作区时按平台自动转换。
+* text=auto eol=lf
+
+# 明确按二进制处理，避免 Git 误做换行转换或文本 diff。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+
+# 语言与文档：diff 与统计更可读
+*.py diff=python
+*.md diff=markdown
+*.json text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf

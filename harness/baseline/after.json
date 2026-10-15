@@ -1,0 +1,2337 @@
+{
+  "label": "after",
+  "created_at": "2026-10-15T03:19:33+00:00",
+  "corpus_grading": [
+    {
+      "id": "S-001",
+      "title": "青禾 X1 电动牙刷 产品规格页",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "A",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-002",
+      "title": "青禾 X1 续航复测报告",
+      "kind": "独立检测",
+      "sampling": "市场随机购买",
+      "accredited": true,
+      "tier": "B",
+      "identity": "独立第三方",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：独立第三方",
+        "市场随机购买样本",
+        "取样方式：市场随机购买",
+        "有认可资质（只作为门槛判据，不额外加分）",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-003",
+      "title": "用户发帖：青禾 X1 续航实测",
+      "kind": "站内用户内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "C",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-004",
+      "title": "促销推广文：电动牙刷怎么选",
+      "kind": "站内营销内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "D",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-005",
+      "title": "口腔护理协会 2025 年度认证名录",
+      "kind": "行业组织名录",
+      "sampling": "",
+      "accredited": false,
+      "tier": "A",
+      "identity": "独立第三方",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：独立第三方",
+        "独立第三方（取样方式未说明）",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-006",
+      "title": "口腔护理协会 2023 年度认证名录（旧版）",
+      "kind": "行业组织名录",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "独立第三方",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：独立第三方",
+        "独立第三方（取样方式未说明）",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-007",
+      "title": "关于便携式电子设备乘机的规定（2025 版）",
+      "kind": "监管公开库",
+      "sampling": "",
+      "accredited": false,
+      "tier": "A",
+      "identity": "监管机构",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：监管机构",
+        "监管机构公开信息",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-008",
+      "title": "云石 P20 移动电源 规格",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-009",
+      "title": "带货文案：出行必备充电宝",
+      "kind": "站内营销内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "C",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-010",
+      "title": "实验室电源横向对比评测",
+      "kind": "独立检测",
+      "sampling": "市场随机购买",
+      "accredited": true,
+      "tier": "B",
+      "identity": "独立第三方",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：独立第三方",
+        "市场随机购买样本",
+        "取样方式：市场随机购买",
+        "有认可资质（只作为门槛判据，不额外加分）",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-011",
+      "title": "社区规范节选：虚假营销与虚构测评",
+      "kind": "平台规则",
+      "sampling": "",
+      "accredited": false,
+      "tier": "A",
+      "identity": "平台机构",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：平台机构",
+        "平台规则文本",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-012",
+      "title": "匿名汇总帖：充电宝安全隐患",
+      "kind": "站内用户内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "D",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-013",
+      "title": "澜声 A2 降噪耳机 产品规格页",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-014",
+      "title": "澜声 A2 续航复测报告",
+      "kind": "独立检测",
+      "sampling": "市场随机购买",
+      "accredited": true,
+      "tier": "B",
+      "identity": "独立第三方",
+      "strong": true,
+      "weight": 0.9,
+      "reasons": [
+        "来源身份：独立第三方",
+        "市场随机购买样本",
+        "取样方式：市场随机购买",
+        "有认可资质（只作为门槛判据，不额外加分）",
+        "展示权重 0.90（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-015",
+      "title": "沁澜 R3 净水器 产品规格页",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-016",
+      "title": "沁澜 R3 净水器 规格页（2023 版）",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-017",
+      "title": "澄野 C5 精华 产品规格页",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-018",
+      "title": "种草文案：平价精华盘点",
+      "kind": "站内营销内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "D",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-019",
+      "title": "禾初 有机米粉 产品规格页",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-020",
+      "title": "用户发帖：沐野 M1 用了一个月",
+      "kind": "站内用户内容",
+      "sampling": "",
+      "accredited": false,
+      "tier": "D",
+      "identity": "用户自述",
+      "strong": false,
+      "weight": 0.4,
+      "reasons": [
+        "来源身份：用户自述",
+        "用户内容不能单独支撑结论",
+        "展示权重 0.40（未过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-021",
+      "title": "沁澜 R3 水效标识说明",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-022",
+      "title": "沁澜 R3 水效标识说明（2022 版）",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-023",
+      "title": "澜声 A2 认证与合规说明",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    },
+    {
+      "id": "S-024",
+      "title": "禾初 有机米粉 生产资质说明",
+      "kind": "品牌官方声明",
+      "sampling": "",
+      "accredited": false,
+      "tier": "B",
+      "identity": "厂商自述",
+      "strong": true,
+      "weight": 0.7,
+      "reasons": [
+        "来源身份：厂商自述",
+        "厂商标称：可作为『厂商是否这样标称』的依据",
+        "展示权重 0.70（过门槛，三档制，不参与资格判定）"
+      ]
+    }
+  ],
+  "ranking": {
+    "authoritative_value": [
+      {
+        "metric": "容量",
+        "unit": "mAh",
+        "candidates": [
+          {
+            "source_id": "S-008",
+            "value": "20000",
+            "tier": "B",
+            "date": "2025-04-18"
+          },
+          {
+            "source_id": "S-017",
+            "value": "30",
+            "tier": "B",
+            "date": "2025-04-02"
+          },
+          {
+            "source_id": "S-020",
+            "value": "4",
+            "tier": "D",
+            "date": "2025-04-01"
+          }
+        ],
+        "picked": "S-008",
+        "picked_value": "20000"
+      },
+      {
+        "metric": "快充功率",
+        "unit": "W",
+        "candidates": [
+          {
+            "source_id": "S-008",
+            "value": "22.5",
+            "tier": "B",
+            "date": "2025-04-18"
+          },
+          {
+            "source_id": "S-013",
+            "value": "18",
+            "tier": "B",
+            "date": "2025-05-10"
+          }
+        ],
+        "picked": "S-013",
+        "picked_value": "18"
+      },
+      {
+        "metric": "滤芯寿命",
+        "unit": "年",
+        "candidates": [
+          {
+            "source_id": "S-015",
+            "value": "3",
+            "tier": "B",
+            "date": "2025-06-15"
+          },
+          {
+            "source_id": "S-016",
+            "value": "2",
+            "tier": "B",
+            "date": "2023-07-01"
+          }
+        ],
+        "picked": "S-015",
+        "picked_value": "3"
+      },
+      {
+        "metric": "续航",
+        "unit": "天",
+        "candidates": [
+          {
+            "source_id": "S-001",
+            "value": "21",
+            "tier": "A",
+            "date": "2025-03-12"
+          },
+          {
+            "source_id": "S-002",
+            "value": "19.5",
+            "tier": "B",
+            "date": "2025-05-20"
+          },
+          {
+            "source_id": "S-003",
+            "value": "45",
+            "tier": "C",
+            "date": "2024-11-02"
+          },
+          {
+            "source_id": "S-004",
+            "value": "60",
+            "tier": "D",
+            "date": "2024-06-15"
+          },
+          {
+            "source_id": "S-013",
+            "value": "40",
+            "tier": "B",
+            "date": "2025-05-10"
+          },
+          {
+            "source_id": "S-014",
+            "value": "37.5",
+            "tier": "B",
+            "date": "2025-06-20"
+          }
+        ],
+        "picked": "S-002",
+        "picked_value": "19.5"
+      },
+      {
+        "metric": "额定能量",
+        "unit": "Wh",
+        "candidates": [
+          {
+            "source_id": "S-008",
+            "value": "74",
+            "tier": "B",
+            "date": "2025-04-18"
+          },
+          {
+            "source_id": "S-010",
+            "value": "62",
+            "tier": "B",
+            "date": "2024-12-05"
+          }
+        ],
+        "picked": "S-010",
+        "picked_value": "62"
+      }
+    ],
+    "compare_numeric": [
+      {
+        "case_id": "GAP-001",
+        "claim": "青禾 X1 续航 60 天",
+        "best": "S-007",
+        "numeric_source": "S-002",
+        "numeric_verdict": "CONTRADICTED"
+      },
+      {
+        "case_id": "GAP-002",
+        "claim": "获得口腔护理协会认证",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-003",
+        "claim": "云石 P20 额定能量 74Wh",
+        "best": "S-007",
+        "numeric_source": "S-010",
+        "numeric_verdict": "CONTRADICTED"
+      },
+      {
+        "case_id": "GAP-003",
+        "claim": "可以带上飞机",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-004",
+        "claim": "云石 P20 有电池过热隐患",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-005",
+        "claim": "云石 P20 容量 20000mAh",
+        "best": "S-007",
+        "numeric_source": "S-008",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-006",
+        "claim": "莱茵 H9 滤芯寿命 3 年",
+        "best": "S-007",
+        "numeric_source": "S-015",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-007",
+        "claim": "通过了欧盟 CE 认证",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-008",
+        "claim": "澜声 A2 续航 40 小时",
+        "best": "S-007",
+        "numeric_source": "S-014",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-008",
+        "claim": "澜声 A2 开启降噪续航 28 小时",
+        "best": "S-007",
+        "numeric_source": "S-014",
+        "numeric_verdict": "CONTRADICTED"
+      },
+      {
+        "case_id": "GAP-008",
+        "claim": "澜声 A2 支持 45W 快充",
+        "best": "S-007",
+        "numeric_source": "S-013",
+        "numeric_verdict": "CONTRADICTED"
+      },
+      {
+        "case_id": "GAP-009",
+        "claim": "沁澜 R3 通量 1200G",
+        "best": "S-007",
+        "numeric_source": "S-015",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-009",
+        "claim": "沁澜 R3 滤芯寿命 3 年",
+        "best": "S-007",
+        "numeric_source": "S-015",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-009",
+        "claim": "沁澜 R3 废水比 1:1",
+        "best": "S-007",
+        "numeric_source": "S-015",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-010",
+        "claim": "澄野 C5 烟酰胺浓度 5%",
+        "best": "S-007",
+        "numeric_source": "S-017",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-010",
+        "claim": "澄野 C5 容量 30ml",
+        "best": "S-007",
+        "numeric_source": "S-017",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-011",
+        "claim": "青禾 X1 续航 21 天",
+        "best": "S-007",
+        "numeric_source": "S-002",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-012",
+        "claim": "云石 P20 额定能量 74Wh",
+        "best": "S-007",
+        "numeric_source": "S-010",
+        "numeric_verdict": "CONTRADICTED"
+      },
+      {
+        "case_id": "GAP-013",
+        "claim": "禾初 有机米粉含铁量 6.5mg",
+        "best": "S-007",
+        "numeric_source": "S-019",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-014",
+        "claim": "澜声 A2 标称续航 40 小时",
+        "best": "S-007",
+        "numeric_source": "S-014",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-014",
+        "claim": "降噪开到最大也能用 28 小时",
+        "best": "S-007",
+        "numeric_source": "S-013",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-015",
+        "claim": "店员说这款的滤芯能用 3 年",
+        "best": "S-007",
+        "numeric_source": "S-015",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-016",
+        "claim": "沐野 M1 水箱容量 4L",
+        "best": "S-007",
+        "numeric_source": "S-020",
+        "numeric_verdict": "SUPPORTED"
+      },
+      {
+        "case_id": "GAP-017",
+        "claim": "沁澜 R3 通过 NSF 认证",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-018",
+        "claim": "澜声 A2 通过 Hi-Res Audio 认证",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      },
+      {
+        "case_id": "GAP-019",
+        "claim": "禾初 有机米粉获得有机认证",
+        "best": "S-007",
+        "numeric_source": null,
+        "numeric_verdict": null
+      }
+    ],
+    "assessor_best": [
+      {
+        "metric": "快充功率",
+        "unit": "W",
+        "candidates": [
+          "S-008",
+          "S-013"
+        ],
+        "best": "S-008",
+        "sufficient": true,
+        "flags": [],
+        "reason": "存在可用的高等级来源（S-008，厂商自述）",
+        "decisive": [
+          "S-008"
+        ]
+      },
+      {
+        "metric": "滤芯寿命",
+        "unit": "年",
+        "candidates": [
+          "S-015",
+          "S-016"
+        ],
+        "best": "S-015",
+        "sufficient": false,
+        "flags": [
+          "STALE"
+        ],
+        "reason": "来源已被更新的记录覆盖（过期），不做判定",
+        "decisive": [
+          "S-015",
+          "S-016"
+        ]
+      },
+      {
+        "metric": "续航",
+        "unit": "天",
+        "candidates": [
+          "S-001",
+          "S-002",
+          "S-003",
+          "S-004"
+        ],
+        "best": "S-002",
+        "sufficient": true,
+        "flags": [],
+        "reason": "存在可用的高等级来源（S-002，独立第三方）",
+        "decisive": [
+          "S-002"
+        ]
+      },
+      {
+        "metric": "续航",
+        "unit": "小时",
+        "candidates": [
+          "S-013",
+          "S-014"
+        ],
+        "best": "S-014",
+        "sufficient": true,
+        "flags": [],
+        "reason": "存在可用的高等级来源（S-014，独立第三方）",
+        "decisive": [
+          "S-014"
+        ]
+      },
+      {
+        "metric": "认证",
+        "unit": "",
+        "candidates": [
+          "S-006",
+          "S-005",
+          "S-021",
+          "S-022",
+          "S-023",
+          "S-024"
+        ],
+        "best": "S-005",
+        "sufficient": false,
+        "flags": [
+          "STALE"
+        ],
+        "reason": "来源已被更新的记录覆盖（过期），不做判定",
+        "decisive": [
+          "S-006",
+          "S-005"
+        ]
+      },
+      {
+        "metric": "额定能量",
+        "unit": "Wh",
+        "candidates": [
+          "S-008",
+          "S-010"
+        ],
+        "best": "S-010",
+        "sufficient": false,
+        "flags": [
+          "NOT_COMPARABLE"
+        ],
+        "reason": "测试条件不同（5V/2A 输出条件下实测 / 厂商标称），两个数不该直接比，不做判定",
+        "decisive": [
+          "S-008",
+          "S-010"
+        ]
+      }
+    ]
+  },
+  "evaluations": {
+    "started_at": "2026-10-15T03:19:33+00:00",
+    "runs": {
+      "gap": {
+        "run_id": "baseline-after-gap",
+        "returncode": 0,
+        "metrics": {
+          "claims": 26,
+          "matched_count": 26,
+          "extracted_claim_count": 28,
+          "spurious_claim_count": 2,
+          "missing_claims": [],
+          "spurious_claims": [
+            "云石 P20 充电宝容量 20000mAh",
+            "20000mAh 大容量"
+          ],
+          "claim_recall": 1.0,
+          "claim_precision": 0.9286,
+          "routing_accuracy": 1.0,
+          "state_accuracy": 1.0,
+          "verdict_accuracy": 1.0,
+          "flag_recall": 0.8571,
+          "flag_precision": 0.9231,
+          "spurious_flag_count": 2,
+          "missing_flag_count": 1,
+          "evidence_hit_rate": 0.9,
+          "evidence_scored_count": 20,
+          "evidence_unscored_count": 6,
+          "tool_selection_accuracy": 1.0,
+          "reason_match_rate": 0.8,
+          "tier_accuracy": 1.0,
+          "avg_tool_calls_per_claim": 1.1154,
+          "retry_rate": 0.0769,
+          "escalation_rate": 0.4615,
+          "judged_count": 14,
+          "escalated_count": 12,
+          "tool_failed_count": 0
+        },
+        "cases": [
+          {
+            "case_id": "GAP-001",
+            "claim": "云石 P20 充电宝容量 20000mAh",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-008"
+            ],
+            "evidence": [
+              "S-008"
+            ]
+          },
+          {
+            "case_id": "GAP-001",
+            "claim": "青禾 X1 电动牙刷续航 60 天",
+            "state": "JUDGED",
+            "verdict": "CONTRADICTED",
+            "flags": [],
+            "tier": "downrank",
+            "rule": "R8",
+            "decided_by": [
+              "S-002"
+            ],
+            "evidence": [
+              "S-002",
+              "S-001",
+              "S-003",
+              "S-004"
+            ]
+          },
+          {
+            "case_id": "GAP-002",
+            "claim": "还获得过口腔护理协会认证",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "STALE"
+            ],
+            "tier": "manual",
+            "rule": "R2",
+            "decided_by": [
+              "S-005",
+              "S-006"
+            ],
+            "evidence": [
+              "S-005",
+              "S-006"
+            ]
+          },
+          {
+            "case_id": "GAP-003",
+            "claim": "20000mAh 大容量",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-008"
+            ],
+            "evidence": [
+              "S-008"
+            ]
+          },
+          {
+            "case_id": "GAP-003",
+            "claim": "额定能量 74Wh",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "NOT_COMPARABLE"
+            ],
+            "tier": "manual",
+            "rule": "R2",
+            "decided_by": [
+              "S-008",
+              "S-010"
+            ],
+            "evidence": [
+              "S-008",
+              "S-010"
+            ]
+          },
+          {
+            "case_id": "GAP-003",
+            "claim": "可以带上飞机",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-008",
+              "S-010",
+              "S-007"
+            ],
+            "evidence": [
+              "S-008",
+              "S-010"
+            ]
+          },
+          {
+            "case_id": "GAP-004",
+            "claim": "有用户反映电池过热隐患",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [],
+            "tier": "manual",
+            "rule": "R12",
+            "decided_by": [
+              "S-010"
+            ],
+            "evidence": [
+              "S-012",
+              "S-008",
+              "S-009",
+              "S-010"
+            ]
+          },
+          {
+            "case_id": "GAP-005",
+            "claim": "容量 20000mAh",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-008"
+            ],
+            "evidence": [
+              "S-008"
+            ]
+          },
+          {
+            "case_id": "GAP-006",
+            "claim": "滤芯寿命长达 3 年",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [],
+            "tier": "manual",
+            "rule": "R12",
+            "decided_by": [
+              "S-015"
+            ],
+            "evidence": [
+              "S-015",
+              "S-016"
+            ]
+          },
+          {
+            "case_id": "GAP-007",
+            "claim": "青禾 X1 电动牙刷宣称通过了欧盟 CE 认证",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "STALE"
+            ],
+            "tier": "manual",
+            "rule": "R2",
+            "decided_by": [
+              "S-005",
+              "S-006"
+            ],
+            "evidence": [
+              "S-005",
+              "S-006"
+            ]
+          },
+          {
+            "case_id": "GAP-008",
+            "claim": "标称续航 40 小时",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-014"
+            ],
+            "evidence": [
+              "S-014",
+              "S-013"
+            ]
+          },
+          {
+            "case_id": "GAP-008",
+            "claim": "开启降噪 28 小时",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-013"
+            ],
+            "evidence": [
+              "S-013"
+            ]
+          },
+          {
+            "case_id": "GAP-008",
+            "claim": "支持 45W 快充",
+            "state": "JUDGED",
+            "verdict": "CONTRADICTED",
+            "flags": [],
+            "tier": "manual",
+            "rule": "R9",
+            "decided_by": [
+              "S-013"
+            ],
+            "evidence": [
+              "S-013"
+            ]
+          },
+          {
+            "case_id": "GAP-009",
+            "claim": "通量 1200G",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-015"
+            ],
+            "evidence": [
+              "S-015"
+            ]
+          },
+          {
+            "case_id": "GAP-009",
+            "claim": "废水比 1:1",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-015"
+            ],
+            "evidence": [
+              "S-015"
+            ]
+          },
+          {
+            "case_id": "GAP-009",
+            "claim": "滤芯寿命 3 年",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "STALE"
+            ],
+            "tier": "manual",
+            "rule": "R3",
+            "decided_by": [
+              "S-015",
+              "S-016"
+            ],
+            "evidence": [
+              "S-015",
+              "S-016"
+            ]
+          },
+          {
+            "case_id": "GAP-010",
+            "claim": "烟酰胺浓度 5%",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-017"
+            ],
+            "evidence": [
+              "S-017"
+            ]
+          },
+          {
+            "case_id": "GAP-010",
+            "claim": "容量 30ml",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-017"
+            ],
+            "evidence": [
+              "S-017"
+            ]
+          },
+          {
+            "case_id": "GAP-011",
+            "claim": "续航 21 天完全够用",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-002"
+            ],
+            "evidence": [
+              "S-002",
+              "S-001",
+              "S-003",
+              "S-004"
+            ]
+          },
+          {
+            "case_id": "GAP-012",
+            "claim": "额定能量 74Wh",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "NOT_COMPARABLE"
+            ],
+            "tier": "manual",
+            "rule": "R2",
+            "decided_by": [
+              "S-008",
+              "S-010"
+            ],
+            "evidence": [
+              "S-008",
+              "S-010"
+            ]
+          },
+          {
+            "case_id": "GAP-013",
+            "claim": "含铁量 6.5mg",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-019"
+            ],
+            "evidence": [
+              "S-019"
+            ]
+          },
+          {
+            "case_id": "GAP-014",
+            "claim": "这款耳机标称续航 40 小时",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-014"
+            ],
+            "evidence": [
+              "S-014",
+              "S-013"
+            ]
+          },
+          {
+            "case_id": "GAP-014",
+            "claim": "降噪开到最大也能用 28 小时",
+            "state": "JUDGED",
+            "verdict": "SUPPORTED",
+            "flags": [],
+            "tier": "release",
+            "rule": "R4",
+            "decided_by": [
+              "S-013"
+            ],
+            "evidence": [
+              "S-013"
+            ]
+          },
+          {
+            "case_id": "GAP-015",
+            "claim": "店员说这款的滤芯能用 3 年",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "STALE"
+            ],
+            "tier": "manual",
+            "rule": "R3",
+            "decided_by": [
+              "S-015",
+              "S-016"
+            ],
+            "evidence": [
+              "S-015",
+              "S-016"
+            ]
+          },
+          {
+            "case_id": "GAP-016",
+            "claim": "说它水箱容量 4L",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "LOW_SOURCE_QUALITY"
+            ],
+            "tier": "manual",
+            "rule": "R3",
+            "decided_by": [],
+            "evidence": [
+              "S-020"
+            ]
+          },
+          {
+            "case_id": "GAP-017",
+            "claim": "沁澜 R3 净水器通过了 NSF 认证",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [
+              "STALE"
+            ],
+            "tier": "manual",
+            "rule": "R2",
+            "decided_by": [
+              "S-021",
+              "S-022"
+            ],
+            "evidence": [
+              "S-021",
+              "S-022"
+            ]
+          },
+          {
+            "case_id": "GAP-018",
+            "claim": "澜声 A2 耳机通过 Hi-Res Audio 认证",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [],
+            "tier": "manual",
+            "rule": "R12",
+            "decided_by": [
+              "S-023"
+            ],
+            "evidence": [
+              "S-023"
+            ]
+          },
+          {
+            "case_id": "GAP-019",
+            "claim": "禾初 有机米粉获得有机认证",
+            "state": "ESCALATED",
+            "verdict": "INSUFFICIENT",
+            "flags": [],
+            "tier": "manual",
+            "rule": "R12",
+            "decided_by": [
+              "S-024"
+            ],
+            "evidence": [
+              "S-024"
+            ]
+          }
+        ],
+        "stderr_tail": ""
+      },
+      "eval30": {
+        "run_id": "baseline-after-eval30",
+        "returncode": 0,
+        "metrics": {
+          "cases": 30,
+          "claim_recall": 0.8571,
+          "claim_precision": 1.0,
+          "verdict_accuracy": 0.2667,
+          "flag_recall": 0.0,
+          "citation_precision_proxy": 0.5333,
+          "review_queue_agreement": 0.3333,
+          "unsupported_certainty_rate": 1.0,
+          "insufficient_expected": 12,
+          "insufficient_answered": 11,
+          "insufficient_missed": 1,
+          "insufficient_unanswered": 0,
+          "verdict_missing_count": 0,
+          "queue_mismatch_breakdown": {
+            "判定不同": 20
+          },
+          "unsupported_certain_count": 11,
+          "p0_errors": 19,
+          "p1_errors": 23,
+          "failed_cases": [],
+          "format_violation_cases": [],
+          "format_violation_rate": 0.0,
+          "model_calls": 60,
+          "prompt_tokens": 19688,
+          "completion_tokens": 3360,
+          "avg_latency_ms": 0,
+          "max_latency_ms": 0,
+          "score_by_case": [
+            {
+              "case_id": "EV-001",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.75"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-002",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.76"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-003",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.53"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-004",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 2,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [
+                "泵压更高所以咖啡更浓：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [],
+              "unmatched_expected": [
+                "晨屿胶囊咖啡机泵压为 20Bar"
+              ],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.80"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-005",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.61"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-006",
+              "category": "supported",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.33"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-007",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "墨影 X1 视频播放续航约 20 小时：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "墨影 X1 视频播放续航约 20 小时：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.40"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-008",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "墨影 X1 全系列支持无线充电：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "墨影 X1 全系列支持无线充电：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.79"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-009",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "山见冲锋衣使用的防水膜为独家专利技术：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "山见冲锋衣使用的防水膜为独家专利技术：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.64"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-010",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "途安记录仪通过国际 XX 安全认证：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "途安记录仪通过国际 XX 安全认证：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.81"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-011",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "力道 L7 推力在同价位最强：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "力道 L7 推力在同价位最强：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.65"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-012",
+              "category": "contradicted",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "澄野 C5 精华烟酰胺浓度为 5%：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "澄野 C5 精华烟酰胺浓度为 5%：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.62"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-013",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "90% 的用户 4 周内体能明显改善：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "90% 的用户 4 周内体能明显改善：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.80"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-014",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "该护腰枕获得三甲医院康复科推荐：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "该护腰枕获得三甲医院康复科推荐：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.57"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-015",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "清风 R3 净化速度行业第一：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "清风 R3 净化速度行业第一：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.65"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-016",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 2,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "该餐具可完全降解：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "该餐具可完全降解：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [
+                "埋进土里 90 天降解完成"
+              ],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.57"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-017",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "毛球喂食器用户复购率 60%：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "毛球喂食器用户复购率 60%：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.67"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-018",
+              "category": "insufficient",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [
+                "该冲锋衣与大牌共用同一条产线：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.43"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-019",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "墨影 X1 支持相册直接备份到电脑：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "墨影 X1 支持相册直接备份到电脑：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.81"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-020",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "该产品当前到手价 899 元：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "该产品当前到手价 899 元：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.44"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-021",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "澄野 C5 精华不含酒精：冲突内容被判为支持"
+              ],
+              "p1_errors": [
+                "澄野 C5 精华不含酒精：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "CONTRADICTED→SUPPORTED sim=0.80"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-022",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "洁觅洗地机通过 XX 抗菌认证：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "洁觅洗地机通过 XX 抗菌认证：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.79"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-023",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 2,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "暖漾 K2 噪音很低：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "暖漾 K2 噪音很低：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.80"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-024",
+              "category": "stale",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 2,
+              "citation_hits": 0,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [
+                "清风 R3 滤芯寿命为 12 个月：证据不足却被判为确定结论"
+              ],
+              "p1_errors": [
+                "清风 R3 滤芯寿命为 12 个月：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "INSUFFICIENT→SUPPORTED sim=0.60"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-025",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [],
+              "p1_errors": [
+                "澜声 Buds Pro 续航 40 小时：漏标 OMITTED_CONDITION",
+                "澜声 Buds Pro 续航 40 小时：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "PARTIAL→SUPPORTED sim=1.00"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-026",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 1,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [],
+              "p1_errors": [
+                "墨影 X1 充电 10 分钟可用 5 小时：漏标 OMITTED_CONDITION",
+                "墨影 X1 充电 10 分钟可用 5 小时：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "PARTIAL→SUPPORTED sim=0.75"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-027",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 1,
+              "predicted_total": 1,
+              "verdict_correct": 0,
+              "flag_hits": 0,
+              "flag_expected": 2,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 0,
+              "p0_errors": [],
+              "p1_errors": [
+                "执行该训练计划 7 天可减重 5 斤：漏标 LOW_SOURCE_QUALITY/OMITTED_CONDITION",
+                "执行该训练计划 7 天可减重 5 斤：复核队列判断不一致（期望 进）"
+              ],
+              "unmatched_expected": [],
+              "unmatched_predicted": [],
+              "details": [
+                "PARTIAL→SUPPORTED sim=0.40"
+              ],
+              "queue_mismatch_reasons": [
+                "判定不同"
+              ],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-028",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 2,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [
+                "清风 R3 运行非常安静"
+              ],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.80"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-029",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 2,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [
+                "该精华抗老效果明显"
+              ],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.64"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            },
+            {
+              "case_id": "EV-030",
+              "category": "omitted_condition",
+              "matched": 1,
+              "expected_total": 2,
+              "predicted_total": 1,
+              "verdict_correct": 1,
+              "flag_hits": 0,
+              "flag_expected": 0,
+              "citation_hits": 1,
+              "citation_predicted": 1,
+              "queue_agreement": 1,
+              "p0_errors": [],
+              "p1_errors": [],
+              "unmatched_expected": [
+                "下雨天可以放心使用"
+              ],
+              "unmatched_predicted": [],
+              "details": [
+                "SUPPORTED→SUPPORTED sim=0.51"
+              ],
+              "queue_mismatch_reasons": [],
+              "verdict_missing": 0
+            }
+          ]
+        },
+        "cases": [
+          {
+            "case_id": "EV-001",
+            "claim": "入手了澜声 Buds Pro，关闭降噪时综合续航 40 小时是真的，每天通勤两小时，一周才充一次电",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-002",
+            "claim": "清风 R3 的颗粒物 CADR 是 600",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-003",
+            "claim": "云丘 AirBook 14 只有 1.19 公斤，背去图书馆完全没负担",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-004",
+            "claim": "晨屿胶囊咖啡机是 20Bar 泵压，泵压更高所以咖啡更浓",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-005",
+            "claim": "小满监护器默认只把数据存在本地 SD 卡，不上传云端，隐私上比较放心",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-006",
+            "claim": "洁觅洗地机的滚刷可以拆下来直接水冲，维护很方便",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-007",
+            "claim": "墨影 X1 连续看视频能撑 20 小时",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-008",
+            "claim": "墨影 X1 全系列都支持无线充电",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-009",
+            "claim": "山见冲锋衣的防水膜是独家专利技术",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-010",
+            "claim": "途安记录仪通过了国际 XX 安全认证",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-011",
+            "claim": "力道 L7 筋膜枪的推力在同价位里最强",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-012",
+            "claim": "澄野 C5 精华现在的烟酰胺浓度还是 5%",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-013",
+            "claim": "岩野蛋白粉 90% 的用户 4 周内体能明显改善",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-014",
+            "claim": "这款护腰枕是三甲医院康复科推荐的",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-015",
+            "claim": "清风 R3 的净化速度是行业第一",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-016",
+            "claim": "这款玉米餐具可以完全降解，埋进土里 90 天就没了",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-017",
+            "claim": "毛球喂食器的用户复购率高达 60%",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-018",
+            "claim": "这件冲锋衣和某大牌是同一条产线做出来的",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-019",
+            "claim": "墨影 X1 支持把相册直接备份到电脑",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-020",
+            "claim": "这款现在到手价 899 元，很划算",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-021",
+            "claim": "澄野 C5 精华不含酒精，敏感肌可以放心用",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-022",
+            "claim": "洁觅洗地机通过了 XX 抗菌认证",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-023",
+            "claim": "多篇评测都说暖漾 K2 噪音很低",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-024",
+            "claim": "清风 R3 的滤芯寿命是 12 个月",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-025",
+            "claim": "澜声 Buds Pro 续航 40 小时",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-026",
+            "claim": "墨影 X1 充电 10 分钟能用 5 小时",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-027",
+            "claim": "跟着这个训练计划 7 天瘦 5 斤",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-028",
+            "claim": "清风 R3 的 CADR 达 600，而且非常安静",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-029",
+            "claim": "这支精华含 A 醇，抗老效果明显",
+            "verdict": "SUPPORTED",
+            "flags": []
+          },
+          {
+            "case_id": "EV-030",
+            "claim": "途安记录仪是 IPX5 防水，下雨天也能放心用",
+            "verdict": "SUPPORTED",
+            "flags": []
+          }
+        ],
+        "stderr_tail": ""
+      }
+    }
+  }
+}

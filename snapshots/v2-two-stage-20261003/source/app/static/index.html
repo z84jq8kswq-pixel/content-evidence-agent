@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>内容证据核查工作台</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      内容证据核查工作台
+    </div>
+    <div class="topbar-controls">
+      <label for="run-select">运行</label>
+      <select id="run-select"></select>
+      <label class="toggle" for="only-comparable">
+        <input type="checkbox" id="only-comparable" checked>
+        只看可比较
+      </label>
+      <span id="run-badges" class="badges"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="视图">
+    <button class="tab active" type="button" role="tab" data-view="review" aria-selected="true">核查</button>
+    <button class="tab" type="button" role="tab" data-view="trace" aria-selected="false">运行 Trace</button>
+    <button class="tab" type="button" role="tab" data-view="compare" aria-selected="false">版本对比</button>
+  </nav>
+
+  <main>
+    <section id="view-review" class="view"></section>
+    <section id="view-trace" class="view" hidden></section>
+    <section id="view-compare" class="view" hidden></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+  "run_id": "20261003-181211-deepseek-v2",
+  "started_at": "2026-10-03T18:12:11+08:00",
+  "config_path": "config/exp-judge-low.json",
+  "adapter": "deepseek",
+  "model_id": "deepseek-flash",
+  "pipeline": "v2",
+  "temperature": 0,
+  "max_tokens": 3000,
+  "case_ids": [
+    "EV-001",
+    "EV-002",
+    "EV-003",
+    "EV-004",
+    "EV-005",
+    "EV-006",
+    "EV-007",
+    "EV-008",
+    "EV-009",
+    "EV-010",
+    "EV-011",
+    "EV-012",
+    "EV-013",
+    "EV-014",
+    "EV-015",
+    "EV-016",
+    "EV-017",
+    "EV-018",
+    "EV-019",
+    "EV-020",
+    "EV-021",
+    "EV-022",
+    "EV-023",
+    "EV-024",
+    "EV-025",
+    "EV-026",
+    "EV-027",
+    "EV-028",
+    "EV-029",
+    "EV-030"
+  ],
+  "pricing": {
+    "mode": "off_peak",
+    "off_peak": {
+      "prompt_per_mtok": 1.0,
+      "completion_per_mtok": 4.0
+    },
+    "peak": {
+      "prompt_per_mtok": 2.0,
+      "completion_per_mtok": 8.0
+    }
+  },
+  "steps": {
+    "extract": {
+      "thinking": "disabled"
+    },
+    "judge": {
+      "reasoning_effort": "low"
+    }
+  },
+  "dataset": "eval_tasks.json",
+  "note": "",
+  "eval_set_hash": "6000dcf4",
+  "eval_set_total": 30
+}

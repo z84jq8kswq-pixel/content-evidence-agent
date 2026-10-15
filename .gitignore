@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+runs/
+.env.local
+# 界面上的复核记录属于本地运行数据，不进仓库
+app/reviews.jsonl
+# 写入过程中的临时文件
+*.tmp
