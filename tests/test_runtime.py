@@ -521,8 +521,8 @@ class AgentIntegrationTests(unittest.TestCase):
         claim = outcome.claims[0]
         self.assertEqual(claim.state, ESCALATED)
         self.assertGreaterEqual(claim.tool_calls, 2)  # 换过查询词
-        # 2026-10-13：语料扩容后改用一条与语料零词面重叠的主张（紫外线杀菌灯），才能真的走到@Q@用尽@Q@；
-        # 原来那条（滤芯寿命很长）现在会命中另一个产品的文档，变成@Q@证据充分但规则无法判定@Q@——
+        # 2026-10-13：语料扩容后改用一条与语料零词面重叠的主张（紫外线杀菌灯），才能真的走到「用尽」；
+        # 原来那条（滤芯寿命很长）现在会命中另一个产品的文档，变成「证据充分但规则无法判定」——
         # 那是检索层没有相关性／实体门禁的表现（13 号文档已知局限 1），由 GAP-006 记录。
         self.assertIn("用尽", claim.reason)
 

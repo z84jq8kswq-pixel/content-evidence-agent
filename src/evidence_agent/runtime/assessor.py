@@ -188,9 +188,9 @@ def _records_of(
             if isinstance(fact, Mapping)
             and str(fact.get("metric", "")).strip() == wanted
             # 实体也要对得上：别的产品的同指标记录不能拿来判这条主张。
-            # 这是扩样时真实撞到的：加了净水器语料后，莱茵 H9 的@Q@滤芯寿命@Q@@
-            # 主张检索到了沁澜 R3 的两条记录，被误判成@Q@来源过期@Q@。
-            # 实体必须认得出来、而且对得上：认不出主体的主张（@Q@这款@Q@、陌生品牌）
+            # 这是扩样时真实撞到的：加了净水器语料后，莱茵 H9 的「滤芯寿命」@
+            # 主张检索到了沁澜 R3 的两条记录，被误判成「来源过期」。
+            # 实体必须认得出来、而且对得上：认不出主体的主张（「这款」、陌生品牌）
             # 不能用检索顺手带回来的结构化事实去判冲突／过期——那是别的产品的东西。
             and entity
             and str(fact.get("entity", "")).strip() == entity
@@ -202,8 +202,8 @@ def _is_about_entity(item: Evidence, claim_entity: str) -> bool:
     """这条证据是不是在说这个主体。
 
     主体认得出来时，只有提到这个主体的证据才算数。检索池里经常混进别的产品的权威文档，
-    如果把它们算进@Q@证据充分@Q@，一条只有 D 级用户帖支撑的主张也会被判成支持——扩样时
-    真实发生过。这是@Q@检索没有相关性门槛@Q@的实体版本：以主体为界，可判、可测。
+    如果把它们算进「证据充分」，一条只有 D 级用户帖支撑的主张也会被判成支持——扩样时
+    真实发生过。这是「检索没有相关性门槛」的实体版本：以主体为界，可判、可测。
     """
 
     if not claim_entity:
@@ -255,7 +255,7 @@ def assess(
     if not unique:
         return Assessment(sufficient=False, reason="没有任何证据")
 
-    # 证据包只留@Q@在说这条主张主体@Q@的材料：混进来的别的产品的文档会让强度判定虚高
+    # 证据包只留「在说这条主张主体」的材料：混进来的别的产品的文档会让强度判定虚高
     relevant = [item for item in unique if _is_about_entity(item, claim_entity)]
     if relevant:
         unique = relevant

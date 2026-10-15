@@ -135,7 +135,7 @@ class CompareAgentRunsTests(unittest.TestCase):
         self.assertEqual(result["counts"]["cases"], 0)
 
     def test_real_runs_show_the_gap004_change(self) -> None:
-        """真实产物上的锁：GAP-004 从@Q@规则判不了@Q@变成模型判定。"""
+        """真实产物上的锁：GAP-004 从「规则判不了」变成模型判定。"""
 
         def load(run_id):
             base = ROOT / "runs" / run_id
